@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="机器人辅助肺切除最新论文、中文深度解读与开放全文索引">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>机器人肺手术论文阅读助手</title>
+  <style>
+    :root {
+      --ink: #17323b; --ink-soft: #415b63; --muted: #53686f;
+      --navy: #092f3c; --navy-2: #0e4250; --teal: #16737a;
+      --teal-soft: #dcebee; --gold: #8f5a16; --gold-soft: #fff2da;
+      --paper: #fffefa; --wash: #edf2f2; --line: #cad7d8;
+      --green: #2f6b54; --green-soft: #e2efe8; --red: #8b433b;
+      --shadow: 0 18px 55px rgba(11, 48, 59, .09); --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--wash); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.65; }
+    a { color: inherit; text-underline-offset: 3px; }
+    button, input, select { font: inherit; }
+    button, select { cursor: pointer; }
+    .hero { position: relative; overflow: hidden; color: #f4fbfb; background: linear-gradient(118deg, #072630 0%, var(--navy) 58%, #135864 130%); border-bottom: 7px solid var(--gold); }
+    .hero::after { content: ""; position: absolute; width: 430px; height: 430px; right: -120px; top: -210px; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; box-shadow: 0 0 0 54px rgba(255,255,255,.035), 0 0 0 108px rgba(255,255,255,.025); }
+    .hero-inner { width: min(var(--max), calc(100% - 40px)); margin: auto; padding: 38px 0 46px; position: relative; z-index: 1; }
+    .masthead { display: flex; justify-content: space-between; gap: 24px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,.18); color: #acd0d3; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(330px, .7fr); gap: 48px; align-items: end; padding-top: 42px; }
+    h1 { margin: 0; max-width: 770px; font-family: "Songti SC", "STSong", Georgia, serif; font-size: clamp(42px, 7vw, 74px); font-weight: 650; line-height: 1.04; letter-spacing: -.035em; }
+    h1 span { color: #e8c489; }
+    .hero-copy { max-width: 720px; margin: 22px 0 0; color: #c9dcde; font-size: 17px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 27px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 42px; padding: 9px 14px; border: 1px solid rgba(255,255,255,.34); color: #fff; background: transparent; text-decoration: none; }
+    .button.primary { color: var(--navy); background: #fff; border-color: #fff; font-weight: 700; }
+    .button:hover { transform: translateY(-1px); }
+    .status-panel { padding: 21px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.065); backdrop-filter: blur(8px); }
+    .status-live { display: flex; gap: 9px; align-items: center; color: #d8eaeb; font-size: 13px; }
+    .status-live::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #79cf9c; box-shadow: 0 0 0 5px rgba(121,207,156,.12); }
+    .status-panel strong { display: block; margin-top: 11px; font-family: Georgia, serif; color: #fff; font-size: 25px; }
+    .status-panel p { margin: 7px 0 0; color: #b9d1d3; font-size: 12px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); width: min(var(--max), calc(100% - 40px)); margin: -1px auto 0; background: var(--paper); box-shadow: var(--shadow); }
+    .stat { padding: 21px 24px; border-right: 1px solid var(--line); }
+    .stat:last-child { border-right: 0; }
+    .stat b { display: block; color: var(--navy); font-family: Georgia, serif; font-size: 31px; line-height: 1; }
+    .stat span { display: block; margin-top: 7px; color: var(--muted); font-size: 12px; }
+    main { width: min(var(--max), calc(100% - 40px)); margin: 36px auto 70px; }
+    .section { margin-top: 40px; }
+    .section-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 17px; }
+    .eyebrow { margin: 0 0 5px; color: var(--teal); font-size: 11px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { margin: 0; font-family: "Songti SC", "STSong", Georgia, serif; font-size: clamp(27px, 4vw, 38px); line-height: 1.2; }
+    .section-note { margin: 0; max-width: 480px; color: var(--muted); font-size: 13px; text-align: right; }
+    .brief-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .brief-card { min-height: 190px; padding: 22px; background: var(--paper); border-top: 4px solid var(--gold); box-shadow: var(--shadow); }
+    .brief-card span { color: var(--gold); font: 700 14px Georgia, serif; }
+    .brief-card p { margin: 27px 0 0; font-family: "Songti SC", "STSong", Georgia, serif; font-size: 17px; line-height: 1.7; }
+    .library-shell { background: var(--paper); box-shadow: var(--shadow); }
+    .searchbar { display: grid; grid-template-columns: minmax(240px, 1fr) 190px 150px; gap: 10px; padding: 18px; border-bottom: 1px solid var(--line); }
+    .searchbar label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .searchbar input, .searchbar select { width: 100%; min-height: 44px; padding: 9px 12px; border: 1px solid var(--line); background: #fff; color: var(--ink); }
+    .searchbar input:focus, .searchbar select:focus { outline: 3px solid rgba(22,115,122,.15); border-color: var(--teal); }
+    .filter-row { display: flex; gap: 8px; flex-wrap: wrap; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+    .filter-chip { padding: 7px 11px; color: var(--ink-soft); background: #f3f7f7; border: 1px solid transparent; }
+    .filter-chip.active { color: #fff; background: var(--navy); }
+    .result-line { display: flex; justify-content: space-between; gap: 16px; padding: 15px 18px; color: var(--muted); font-size: 13px; }
+    .article-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border-top: 1px solid var(--line); }
+    .paper-card { display: flex; flex-direction: column; min-height: 365px; padding: 23px; background: var(--paper); }
+    .paper-meta { display: flex; justify-content: space-between; gap: 12px; align-items: center; color: var(--muted); font-size: 12px; }
+    .reading-badge { padding: 4px 8px; color: var(--teal); background: var(--teal-soft); font-weight: 700; }
+    .reading-badge.full { color: var(--green); background: var(--green-soft); }
+    .paper-card h3 { margin: 20px 0 10px; color: var(--navy); font-family: "Songti SC", "STSong", Georgia, serif; font-size: 22px; line-height: 1.35; }
+    .paper-byline { margin: -2px 0 10px; color: var(--muted); font-size: 12px; }
+    .paper-summary { margin: 0; color: var(--ink-soft); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 17px 0; }
+    .tag { padding: 4px 7px; color: var(--muted); background: #f1f5f5; font-size: 11px; }
+    .ids { margin-top: auto; padding-top: 15px; border-top: 1px solid var(--line); color: var(--muted); font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
+    .card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .card-actions a, .card-actions button { padding: 7px 10px; border: 1px solid var(--line); color: var(--ink); background: #fff; text-decoration: none; font-size: 12px; }
+    .card-actions a.primary-link { color: #fff; background: var(--teal); border-color: var(--teal); font-weight: 700; }
+    .empty { display: none; padding: 42px 20px; text-align: center; color: var(--muted); background: var(--paper); }
+    .archive-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .archive-panel { padding: 23px; background: var(--paper); box-shadow: var(--shadow); }
+    .archive-panel h3 { margin: 0 0 15px; color: var(--navy); font-family: "Songti SC", serif; font-size: 21px; }
+    .archive-link { display: grid; grid-template-columns: 100px 1fr; gap: 12px; padding: 11px 0; border-top: 1px solid var(--line); text-decoration: none; }
+    .archive-link span { color: var(--muted); font-size: 12px; }
+    .archive-link:hover strong { color: var(--teal); }
+    .workflow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); box-shadow: var(--shadow); }
+    .workflow article { padding: 22px; background: var(--paper); }
+    .workflow b { color: var(--gold); font: 700 24px Georgia, serif; }
+    .workflow h3 { margin: 12px 0 7px; font-size: 16px; }
+    .workflow p { margin: 0; color: var(--muted); font-size: 13px; }
+    footer { padding: 27px 20px 36px; color: #bdd0d2; background: var(--navy); text-align: center; font-size: 12px; }
+    footer a { color: #fff; }
+    footer .credit { margin: 8px 0; color: #fff; font-size: 14px; font-weight: 700; letter-spacing: .04em; }
+    .noscript { padding: 14px; color: var(--red); background: #f9e8e5; text-align: center; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .status-panel { max-width: 560px; }
+      .brief-grid { grid-template-columns: 1fr; }
+      .brief-card { min-height: auto; }
+      .article-grid { grid-template-columns: 1fr; }
+      .archive-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .hero-inner, main, .stat-grid { width: min(var(--max), calc(100% - 24px)); }
+      .masthead, .section-head { align-items: flex-start; flex-direction: column; }
+      .section-note { text-align: left; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .searchbar { grid-template-columns: 1fr; }
+      .workflow { grid-template-columns: 1fr; }
+      h1 { font-size: 43px; }
+    }
+    @media (max-width: 480px) {
+      .hero-actions .button { width: 100%; }
+      .paper-card { padding: 19px; }
+      .archive-link { grid-template-columns: 1fr; gap: 3px; }
+    }
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      body { background: #fff; color: #000; font-size: 10.5pt; }
+      .hero { color: #000; background: #fff; border-bottom: 2px solid #000; }
+      .hero::after, .hero-actions, .searchbar, .filter-row, footer { display: none !important; }
+      .hero-inner, main, .stat-grid { width: 100%; }
+      .masthead, .hero-copy, .status-panel p, .status-live { color: #000; }
+      h1 span { color: #000; }
+      .status-panel { border-color: #777; }
+      .status-panel strong { color: #000; }
+      .stat-grid, .brief-card, .library-shell, .archive-panel, .workflow { box-shadow: none; }
+      .article-grid { display: block; }
+      .paper-card { min-height: 0; border: 1px solid #bbb; break-inside: avoid; margin-bottom: 8px; }
+      .paper-summary { display: block; }
+      a { color: #000; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="masthead"><span>Thoracic Evidence Library</span><span>Asia / Shanghai · Daily 09:00</span></div>
+      <div class="hero-grid">
+        <div>
+          <h1>机器人肺手术<br><span>论文阅读助手</span></h1>
+          <p class="hero-copy">把每日增量检索、同行级中文解读、合法开放全文与历史简报汇集在同一个可搜索、可离线阅读的页面中。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#library">浏览论文库</a>
+            <a class="button" href="完整版_2026-07-15.md">打开最新完整版</a>
+            <button class="button" id="printButton" type="button">打印 / 另存 PDF</button>
+          </div>
+        </div>
+        <aside class="status-panel" aria-label="更新状态">
+          <div class="status-live">自动更新已启用</div>
+          <strong>检索截止 2026-07-15 09:40（Asia/Shanghai）</strong>
+          <p>首页生成于 2026-07-15 11:30。论文按 DOI/PMID 去重，摘要级与全文解读严格区分。</p>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <div class="stat-grid" aria-label="文献库统计">
+    <div class="stat"><b>24</b><span>已收录论文</span></div>
+    <div class="stat"><b>6</b><span>独立深度解读</span></div>
+    <div class="stat"><b>13</b><span>开放获取记录</span></div>
+    <div class="stat"><b>0</b><span>在线版不镜像 PDF</span></div>
+  </div>
+
+  <noscript><div class="noscript">请启用浏览器 JavaScript，以使用论文搜索和筛选功能。</div></noscript>
+
+  <main>
+    <section class="section" id="summary">
+      <div class="section-head">
+        <div><p class="eyebrow">Today's signal</p><h2>今日速览</h2></div>
+        <p class="section-note">从最新完整版自动提取三条结论；所有数字以逐篇页面和原文为准。</p>
+      </div>
+      <div class="brief-grid"><article class="brief-card"><span>01</span><p>今天最有分量的新证据是肺段切除 Meta：5 项倾向匹配研究、14,007 例中，RATS 与 VATS 的重建中位 OS 均为 4.6 年，HR 0.98（95% CI 0.90–1.08）；RATS 少约 8.82 mL 失血，虽统计显著但临床量级很小。全部底层证据仍为观察研究，不能证明等效或生存获益。</p></article><article class="brief-card"><span>02</span><p>“诊断与治疗一期完成”提供了可操作路径，但适用条件很窄：786 例单中心队列中，机器人楔切术中诊断与终末病理不一致 11/485（2.3%），因欠治疗再切除 2/485（0.4%）；成本优势只是本中心估算，不能推广为所有外周结节都应跳过术前病理。</p></article><article class="brief-card"><span>03</span><p>其余新增主要是低至中等确定性信号：叙述性综述再次确认 RATS 的明确优越性未被证明；单臂冷冻镇痛登记受无对照和厂家关系限制；21 例机器人全肺切除只支持专家中心可行性。今天没有新的随机试验，也没有可靠的预印本转正式发表。</p></article></div>
+    </section>
+
+    <section class="section" id="library">
+      <div class="section-head">
+        <div><p class="eyebrow">Evidence index</p><h2>论文库</h2></div>
+        <p class="section-note">可按题名、作者、DOI、PMID、术式或阅读与获取状态检索。</p>
+      </div>
+      <div class="library-shell">
+        <div class="searchbar">
+          <div><label for="searchInput">搜索论文</label><input id="searchInput" type="search" placeholder="搜索题名、作者、DOI、PMID 或关键结论" autocomplete="off"></div>
+          <div><label for="statusFilter">阅读与获取状态</label><select id="statusFilter"><option value="全部">全部状态</option><option value="全文解读">全文解读</option><option value="摘要级">摘要级解读</option><option value="开放全文">开放全文</option><option value="期刊页面">期刊页面</option><option value="索引记录">索引记录</option></select></div>
+          <div><label for="sortOrder">排序</label><select id="sortOrder"><option value="newest">最新优先</option><option value="oldest">最早优先</option></select></div>
+        </div>
+        <div class="filter-row" aria-label="主题筛选"><button class="filter-chip active" type="button" data-tag="全部" aria-pressed="true">全部</button><button class="filter-chip" type="button" data-tag="综合证据" aria-pressed="false">综合证据</button><button class="filter-chip" type="button" data-tag="肺叶切除" aria-pressed="false">肺叶切除</button><button class="filter-chip" type="button" data-tag="肺段切除" aria-pressed="false">肺段切除</button><button class="filter-chip" type="button" data-tag="楔形切除" aria-pressed="false">楔形切除</button><button class="filter-chip" type="button" data-tag="全肺切除" aria-pressed="false">全肺切除</button><button class="filter-chip" type="button" data-tag="围术期管理" aria-pressed="false">围术期管理</button><button class="filter-chip" type="button" data-tag="学习曲线" aria-pressed="false">学习曲线</button><button class="filter-chip" type="button" data-tag="成本" aria-pressed="false">成本</button><button class="filter-chip" type="button" data-tag="新辅助治疗" aria-pressed="false">新辅助治疗</button><button class="filter-chip" type="button" data-tag="技术创新" aria-pressed="false">技术创新</button><button class="filter-chip" type="button" data-tag="其他" aria-pressed="false">其他</button></div>
+        <div class="result-line"><span id="resultCount" aria-live="polite"></span><span>点击“深度解读”进入自包含同行阅读页</span></div>
+        <div class="article-grid" id="articleGrid"></div>
+        <div class="empty" id="emptyState">没有符合当前条件的论文，请清除搜索词或更换筛选条件。</div>
+      </div>
+    </section>
+
+    <section class="section" id="archive">
+      <div class="section-head"><div><p class="eyebrow">Archive</p><h2>简报归档</h2></div><p class="section-note">完整版用于系统阅读，可转发版适合微信或工作群。</p></div>
+      <div class="archive-grid">
+        <article class="archive-panel"><h3>完整版</h3><a href="完整版_2026-07-15.md" class="archive-link"><span>2026-07-15</span><strong>完整版</strong></a><a href="首期简报_2026-07-13.md" class="archive-link"><span>2026-07-13</span><strong>首期简报</strong></a></article>
+        <article class="archive-panel"><h3>可转发版</h3><a href="转发版_2026-07-15.md" class="archive-link"><span>2026-07-15</span><strong>可转发版</strong></a><a href="转发版_2026-07-13.md" class="archive-link"><span>2026-07-13</span><strong>可转发版</strong></a></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="workflow-title">
+      <div class="section-head"><div><p class="eyebrow">Update discipline</p><h2 id="workflow-title">每日更新如何进入首页</h2></div></div>
+      <div class="workflow">
+        <article><b>01</b><h3>增量检索与去重</h3><p>同时检查发表日期和数据库入库日期，并按 DOI、PMID 及版本关系去重。</p></article>
+        <article><b>02</b><h3>证据分层与原文核对</h3><p>区分全文与摘要级解读，仅保存合法开放获取 PDF，不把观察性关联写成因果。</p></article>
+        <article><b>03</b><h3>重建并校验首页</h3><p>从索引和解读页重新生成数据，检查链接、离线依赖、搜索结构和页面完整性。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>仅供胸外科学术交流和继续教育，不替代患者个体化诊疗决策。</p>
+    <p class="credit">潍坊市人民医院胸外科 · 王江整理</p>
+    <p><a href="文献索引.md">查看原始文献索引</a> · <a href="README.md">使用说明</a></p>
+  </footer>
+
+  <script type="application/json" id="portal-data">{"version":1,"generatedAt":"2026-07-15 11:30","cutoff":"2026-07-15 09:40（Asia/Shanghai）","articles":[{"id":"10.1186/s13019-026-04562-3","date":"2026-07-14","dateKey":"2026-07-14","topic":"RATS 肺叶切除证据现状：叙述性综述","englishTitle":"Current state of evidence for RATS lobectomy for NSCLC","authors":"Galvaing G, d’Ostrevy N, Chadeyras JB, Dupautet L, Naamee A, Filaire M","pmid":"","pmidUrl":"","doi":"10.1186/s13019-026-04562-3","doiUrl":"https://doi.org/10.1186/s13019-026-04562-3","status":"OA 许可已登记，但 early-access 页面当前仅有摘要、PDF 404；HTML 摘要级解读","readingType":"摘要级","evidence":"C*","tags":["综合证据","肺叶切除"],"summary":"这篇 7 月 14 日上线的叙述性综述认为，RATS 肺叶切除在有经验中心是可行且安全的选择，与 VATS 的围术期和长期肿瘤学结果总体相近；淋巴结评估可能更充分，但临床意义不确定，成本更高，尚未证明明确临床优越性。","detailUrl":"深度解读/2026-07-15_Galvaing_RATS肺叶切除证据现状_深度解读.html","pdfUrl":"","isOpenAccess":true},{"id":"10.1016/j.lungcan.2026.109531","date":"2026-07-14","dateKey":"2026-07-14","topic":"RATS vs VATS 早期 NSCLC 肺段切除：5 项 PSM 研究 Meta，14,007 例","englishTitle":"Outcomes of robotic vs video-assisted thoracoscopic segmentectomy in early-stage NSCLC: A meta-analysis of propensity-matched studies","authors":"Anosike U, Amador WFO, de Assis TCC, Maciel RB, Etumudon SI, Goncalves LB, Delgado LM, Oliveira RENN","pmid":"","pmidUrl":"","doi":"10.1016/j.lungcan.2026.109531","doiUrl":"https://doi.org/10.1016/j.lungcan.2026.109531","status":"非 OA；摘要级解读；HTML 深度解读","readingType":"摘要级","evidence":"C*","tags":["综合证据","肺段切除"],"summary":"5 项倾向评分匹配观察研究、14,007 例的 Meta 显示，机器人肺段切除与 VATS 的重建中位总生存均为 4.6 年，HR 0.98；围术期多数结局无显著差异。RATS 的失血平均少 8.82 mL，统计学显著但临床量级很小。","detailUrl":"深度解读/2026-07-15_Anosike_机器人与胸腔镜肺段切除Meta_深度解读.html","pdfUrl":"","isOpenAccess":false},{"id":"10.1016/j.xjon.2026.101959","date":"2026-07-09","dateKey":"2026-07-09","topic":"无术前病理的外周 cT1N0 结节：机器人一期诊断与解剖性切除，786 例","englishTitle":"Validation of Robotic Resection Without Pre-Operative Diagnosis for Peripheral Clinical T1N0 Lung Cancer","authors":"Nguyen DM, Villamizar N, Cotamo LM, Smith B, Gross D, Avella D","pmid":"","pmidUrl":"","doi":"10.1016/j.xjon.2026.101959","doiUrl":"https://doi.org/10.1016/j.xjon.2026.101959","status":"CC BY-NC-ND OA journal pre-proof；全文已核读，PDF 验证页阻断未下载；HTML 深度解读","readingType":"全文解读","evidence":"C","tags":["其他"],"summary":"在一个机器人高量中心，外周 cT1N0 可楔切结节先行术中诊断、恶性后同次完成解剖性切除，病理一致性较高，且本中心成本估算低于术前活检后分期手术；但研究为非随机单中心回顾性比较，不能推广为所有结节都应绕过术前诊断。","detailUrl":"深度解读/2026-07-15_Nguyen_无术前诊断机器人一期切除_深度解读.html","pdfUrl":"","isOpenAccess":true},{"id":"10.3389/fsurg.2026.1841553","date":"2026-06-24","dateKey":"2026-06-24","topic":"机器人全肺切除：单中心连续 21 例","englishTitle":"Largest single-institution series of robotic pneumonectomy","authors":"Asban A, Pachos N, Snyder CA, Ferraro I, Chang S, Bizekis C, Cerfolio RJ, Zervos MD","pmid":"42421869","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/42421869/","doi":"10.3389/fsurg.2026.1841553","doiUrl":"https://doi.org/10.3389/fsurg.2026.1841553","status":"CC BY 开放全文、已下载 PDF、HTML 深度解读","readingType":"全文解读","evidence":"C","tags":["全肺切除"],"summary":"一个高量中心连续完成 21 例计划机器人全肺切除，未发生非计划中转，30 天死亡为 0，90 天死亡 1 例；结果证明“在严格选择和成熟团队中可以完成”，但样本太小且无 VATS/开胸对照，不能证明更安全或更有效。","detailUrl":"深度解读/2026-07-15_Asban_机器人全肺切除病例系列_深度解读.html","pdfUrl":"","isOpenAccess":true},{"id":"10.1007/s00464-026-12993-1","date":"2026-06-22","dateKey":"2026-06-22","topic":"显著血管损伤：RATS vs VATS","englishTitle":"","authors":"","pmid":"42332306","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/42332306/","doi":"10.1007/s00464-026-12993-1","doiUrl":"https://doi.org/10.1007/s00464-026-12993-1","status":"摘要","readingType":"摘要级","evidence":"未分层","tags":["围术期管理"],"summary":"显著血管损伤：RATS vs VATS。摘要","detailUrl":"","pdfUrl":"","isOpenAccess":false},{"id":"10.1007/s11701-026-03574-4","date":"2026-06-20","dateKey":"2026-06-20","topic":"机器人肺叶切除三阶段学习曲线","englishTitle":"","authors":"","pmid":"42322386","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/42322386/","doi":"10.1007/s11701-026-03574-4","doiUrl":"https://doi.org/10.1007/s11701-026-03574-4","status":"摘要","readingType":"摘要级","evidence":"未分层","tags":["肺叶切除","学习曲线"],"summary":"机器人肺叶切除三阶段学习曲线。摘要","detailUrl":"","pdfUrl":"","isOpenAccess":false},{"id":"10.1002/rcs.70191","date":"2026-06-20","dateKey":"2026-06-20","topic":"RATS vs VATS：29 项研究 Meta","englishTitle":"","authors":"","pmid":"42322271","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/42322271/","doi":"10.1002/rcs.70191","doiUrl":"https://doi.org/10.1002/rcs.70191","status":"摘要","readingType":"摘要级","evidence":"未分层","tags":["综合证据"],"summary":"RATS vs VATS：29 项研究 Meta。摘要","detailUrl":"","pdfUrl":"","isOpenAccess":false},{"id":"10.1007/s11701-026-03496-1","date":"2026-06-04","dateKey":"2026-06-04","topic":"8 中心 RATS/VATS/开胸队列","englishTitle":"Robotic vs thoracoscopic vs open lobectomy and segmentectomy for lung cancer: a multicenter cohort study in the ATS of Milan","authors":"Mazzali C, Buzzoni C, Grignani F, et al.","pmid":"42237053","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/42237053/","doi":"10.1007/s11701-026-03496-1","doiUrl":"https://doi.org/10.1007/s11701-026-03496-1","status":"开放全文、已下载 PDF、HTML 深度解读、署名版 PDF","readingType":"全文解读","evidence":"B*","tags":["其他"],"summary":"在米兰区域多中心网络中，RATS 与较少的中转开胸和较短的术后住院相关；但它并未在这项观察性研究中被证明能降低 VATS 的总体并发症，也不能证明生存获益。","detailUrl":"深度解读/2026-07-13_Mazzali_机器人胸腔镜开胸多中心队列_深度解读.html","pdfUrl":"","isOpenAccess":true},{"id":"10.3390/jcm15114078","date":"2026-05-25","dateKey":"2026-05-25","topic":"单孔 Xi RATS vs 单孔 VATS","englishTitle":"","authors":"","pmid":"42278939","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/42278939/","doi":"10.3390/jcm15114078","doiUrl":"https://doi.org/10.3390/jcm15114078","status":"开放全文","readingType":"开放全文","evidence":"未分层","tags":["技术创新"],"summary":"单孔 Xi RATS vs 单孔 VATS。开放全文","detailUrl":"","pdfUrl":"","isOpenAccess":true},{"id":"10.3389/fsurg.2026.1765234","date":"2026-05-20","dateKey":"2026-05-20","topic":"新辅助治疗后机器人解剖性切除","englishTitle":"","authors":"","pmid":"42245313","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/42245313/","doi":"10.3389/fsurg.2026.1765234","doiUrl":"https://doi.org/10.3389/fsurg.2026.1765234","status":"开放全文、已下载 PDF","readingType":"开放全文","evidence":"未分层","tags":["新辅助治疗"],"summary":"新辅助治疗后机器人解剖性切除。开放全文、已下载 PDF","detailUrl":"","pdfUrl":"","isOpenAccess":true},{"id":"10.21037/jtd-2026-0583","date":"2026-05-14","dateKey":"2026-05-14","topic":"机器人胸外科肋间神经冷冻消融：5 中心 REDUCE 登记，428 例","englishTitle":"Multicenter, real-world patient registry outcomes from intercostal nerve cryoablation during robotic-assisted thoracic surgical procedures","authors":"O'Connor LA, Gibson M, Guitron J, Gaughan C, Grizzell B, Quinn CC","pmid":"42444940","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/42444940/","doi":"10.21037/jtd-2026-0583","doiUrl":"https://doi.org/10.21037/jtd-2026-0583","status":"CC BY-NC-ND 开放全文、已下载 PDF、HTML 深度解读；PubMed 2026-07-14 回填","readingType":"全文解读","evidence":"C","tags":["围术期管理"],"summary":"428 例登记显示，接受机器人胸外科手术并加做肋间神经冷冻消融的患者，住院期间疼痛和阿片用量随术后天数下降，器械相关严重不良事件未见报告；但没有未冷冻对照组，因此不能把下降归因于冷冻消融。","detailUrl":"深度解读/2026-07-15_OConnor_RATS冷冻镇痛登记_深度解读.html","pdfUrl":"","isOpenAccess":true},{"id":"10.1002/wjs.70387","date":"2026-05-14","dateKey":"2026-05-14","topic":"肋下 da Vinci SP 单孔肺切除","englishTitle":"","authors":"","pmid":"42132368","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/42132368/","doi":"10.1002/wjs.70387","doiUrl":"https://doi.org/10.1002/wjs.70387","status":"开放全文","readingType":"开放全文","evidence":"未分层","tags":["技术创新"],"summary":"肋下 da Vinci SP 单孔肺切除。开放全文","detailUrl":"","pdfUrl":"","isOpenAccess":true},{"id":"10.1016/j.athoracsur.2025.12.003","date":"2026-05","dateKey":"2026-05-01","topic":"新辅助治疗后 RATS vs VATS，939 例","englishTitle":"","authors":"","pmid":"41456828","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/41456828/","doi":"10.1016/j.athoracsur.2025.12.003","doiUrl":"https://doi.org/10.1016/j.athoracsur.2025.12.003","status":"摘要","readingType":"摘要级","evidence":"未分层","tags":["新辅助治疗"],"summary":"新辅助治疗后 RATS vs VATS，939 例。摘要","detailUrl":"","pdfUrl":"","isOpenAccess":false},{"id":"10.4143/crt.2025.230","date":"2026-03-18","dateKey":"2026-03-18","topic":"RATS vs VATS 临床与经济比较","englishTitle":"","authors":"","pmid":"41856046","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/41856046/","doi":"10.4143/crt.2025.230","doiUrl":"https://doi.org/10.4143/crt.2025.230","status":"摘要","readingType":"摘要级","evidence":"未分层","tags":["成本"],"summary":"RATS vs VATS 临床与经济比较。摘要","detailUrl":"","pdfUrl":"","isOpenAccess":false},{"id":"10.1093/ejcts/ezag048","date":"2026-03-01","dateKey":"2026-03-01","topic":"机器人 vs 胸腔镜肺段切除长期结局","englishTitle":"","authors":"","pmid":"41738343","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/41738343/","doi":"10.1093/ejcts/ezag048","doiUrl":"https://doi.org/10.1093/ejcts/ezag048","status":"开放全文","readingType":"开放全文","evidence":"未分层","tags":["肺段切除"],"summary":"机器人 vs 胸腔镜肺段切除长期结局。开放全文","detailUrl":"","pdfUrl":"","isOpenAccess":true},{"id":"10.1007/s11748-026-02258-y","date":"2026-01-31","dateKey":"2026-01-31","topic":"复杂肺段切除：RATS vs VATS","englishTitle":"","authors":"","pmid":"41619147","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/41619147/","doi":"10.1007/s11748-026-02258-y","doiUrl":"https://doi.org/10.1007/s11748-026-02258-y","status":"开放全文、已下载 PDF","readingType":"开放全文","evidence":"未分层","tags":["肺段切除"],"summary":"复杂肺段切除：RATS vs VATS。开放全文、已下载 PDF","detailUrl":"","pdfUrl":"","isOpenAccess":true},{"id":"10.1186/s12893-026-03501-2","date":"2026-01-16","dateKey":"2026-01-16","topic":"可切除肺癌 RATS 伞形综述","englishTitle":"","authors":"","pmid":"41545856","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/41545856/","doi":"10.1186/s12893-026-03501-2","doiUrl":"https://doi.org/10.1186/s12893-026-03501-2","status":"开放全文、已下载 PDF","readingType":"开放全文","evidence":"未分层","tags":["综合证据"],"summary":"可切除肺癌 RATS 伞形综述。开放全文、已下载 PDF","detailUrl":"","pdfUrl":"","isOpenAccess":true},{"id":"10.1007/s11748-025-02217-z","date":"2026","dateKey":"2026-01-01","topic":"中转开胸率及原因，1,135 例","englishTitle":"","authors":"","pmid":"41186879","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/41186879/","doi":"10.1007/s11748-025-02217-z","doiUrl":"https://doi.org/10.1007/s11748-025-02217-z","status":"摘要","readingType":"摘要级","evidence":"未分层","tags":["围术期管理"],"summary":"中转开胸率及原因，1,135 例。摘要","detailUrl":"","pdfUrl":"","isOpenAccess":false},{"id":"10.1093/ejcts/ezag109","date":"2026","dateKey":"2026-01-01","topic":"IA 期楔形切除，NCDB 29,064 例","englishTitle":"","authors":"","pmid":"41761587","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/41761587/","doi":"10.1093/ejcts/ezag109","doiUrl":"https://doi.org/10.1093/ejcts/ezag109","status":"摘要","readingType":"摘要级","evidence":"未分层","tags":["楔形切除"],"summary":"IA 期楔形切除，NCDB 29,064 例。摘要","detailUrl":"","pdfUrl":"","isOpenAccess":false},{"id":"10.1007/s11748-025-02209-z","date":"2025-10-02","dateKey":"2025-10-02","topic":"5 项 RCT、712 例 Meta","englishTitle":"","authors":"","pmid":"41037231","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/41037231/","doi":"10.1007/s11748-025-02209-z","doiUrl":"https://doi.org/10.1007/s11748-025-02209-z","status":"摘要","readingType":"摘要级","evidence":"未分层","tags":["综合证据"],"summary":"5 项 RCT、712 例 Meta。摘要","detailUrl":"","pdfUrl":"","isOpenAccess":false},{"id":"10.1007/s11701-025-02852-x","date":"2025-10-01","dateKey":"2025-10-01","topic":"4 项 RCT、548 例、GRADE Meta","englishTitle":"","authors":"","pmid":"41032184","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/41032184/","doi":"10.1007/s11701-025-02852-x","doiUrl":"https://doi.org/10.1007/s11701-025-02852-x","status":"期刊页面","readingType":"期刊页面","evidence":"未分层","tags":["综合证据"],"summary":"4 项 RCT、548 例、GRADE Meta。期刊页面","detailUrl":"","pdfUrl":"","isOpenAccess":false},{"id":"10.21037/jtd-2024-2240","date":"2025-08-27","dateKey":"2025-08-27","topic":"首批 200 例项目学习曲线","englishTitle":"","authors":"","pmid":"40950891","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/40950891/","doi":"10.21037/jtd-2024-2240","doiUrl":"https://doi.org/10.21037/jtd-2024-2240","status":"开放全文","readingType":"开放全文","evidence":"未分层","tags":["学习曲线"],"summary":"首批 200 例项目学习曲线。开放全文","detailUrl":"","pdfUrl":"","isOpenAccess":true},{"id":"10.1590/0100-6991e-20253553-en","date":"2025-08-18","dateKey":"2025-08-18","topic":"BRAVO 随机试验 90 天成本分析","englishTitle":"","authors":"","pmid":"40834224","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/40834224/","doi":"10.1590/0100-6991e-20253553-en","doiUrl":"https://doi.org/10.1590/0100-6991e-20253553-en","status":"开放全文","readingType":"开放全文","evidence":"未分层","tags":["成本"],"summary":"BRAVO 随机试验 90 天成本分析。开放全文","detailUrl":"","pdfUrl":"","isOpenAccess":true},{"id":"10.1007/s11701-025-02640-7","date":"2025-08-09","dateKey":"2025-08-09","topic":"改良机器人肺段切除","englishTitle":"","authors":"","pmid":"40781576","pmidUrl":"https://pubmed.ncbi.nlm.nih.gov/40781576/","doi":"10.1007/s11701-025-02640-7","doiUrl":"https://doi.org/10.1007/s11701-025-02640-7","status":"摘要","readingType":"摘要级","evidence":"未分层","tags":["肺段切除"],"summary":"改良机器人肺段切除。摘要","detailUrl":"","pdfUrl":"","isOpenAccess":false}],"conclusions":["今天最有分量的新证据是肺段切除 Meta：5 项倾向匹配研究、14,007 例中，RATS 与 VATS 的重建中位 OS 均为 4.6 年，HR 0.98（95% CI 0.90–1.08）；RATS 少约 8.82 mL 失血，虽统计显著但临床量级很小。全部底层证据仍为观察研究，不能证明等效或生存获益。","“诊断与治疗一期完成”提供了可操作路径，但适用条件很窄：786 例单中心队列中，机器人楔切术中诊断与终末病理不一致 11/485（2.3%），因欠治疗再切除 2/485（0.4%）；成本优势只是本中心估算，不能推广为所有外周结节都应跳过术前病理。","其余新增主要是低至中等确定性信号：叙述性综述再次确认 RATS 的明确优越性未被证明；单臂冷冻镇痛登记受无对照和厂家关系限制；21 例机器人全肺切除只支持专家中心可行性。今天没有新的随机试验，也没有可靠的预印本转正式发表。"],"reports":[{"name":"完整版_2026-07-15.md","label":"2026-07-15 完整版","date":"2026-07-15","url":"完整版_2026-07-15.md"},{"name":"首期简报_2026-07-13.md","label":"2026-07-13 首期简报","date":"2026-07-13","url":"首期简报_2026-07-13.md"}],"shareReports":[{"name":"转发版_2026-07-15.md","label":"2026-07-15 可转发版","date":"2026-07-15","url":"转发版_2026-07-15.md"},{"name":"转发版_2026-07-13.md","label":"2026-07-13 可转发版","date":"2026-07-13","url":"转发版_2026-07-13.md"}],"latestReportUrl":"完整版_2026-07-15.md","counts":{"articles":24,"deepReads":6,"openAccess":13,"localPdfs":0}}</script>
+  <script>
+    (function () {
+      'use strict';
+      var data = JSON.parse(document.getElementById('portal-data').textContent);
+      var state = { query: '', tag: '全部', status: '全部', sort: 'newest' };
+      var grid = document.getElementById('articleGrid');
+      var empty = document.getElementById('emptyState');
+      var resultCount = document.getElementById('resultCount');
+
+      function esc(value) {
+        return String(value || '').replace(/[&<>"']/g, function (character) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+        });
+      }
+
+      function link(label, url, primary) {
+        if (!url) return '';
+        var external = /^https?:/i.test(url);
+        return '<a' + (primary ? ' class="primary-link"' : '') + ' href="' + esc(url) + '"' + (external ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + esc(label) + '</a>';
+      }
+
+      function readingClass(type) {
+        return type === '全文解读' || type === '开放全文' ? 'reading-badge full' : 'reading-badge';
+      }
+
+      function articleCard(article) {
+        var tags = article.tags.map(function (tag) { return '<span class="tag">' + esc(tag) + '</span>'; }).join('');
+        var ids = [];
+        if (article.doi) ids.push('DOI ' + article.doi);
+        if (article.pmid) ids.push('PMID ' + article.pmid);
+        var actions = '';
+        actions += link('深度解读', article.detailUrl, Boolean(article.detailUrl));
+        actions += link('本地 PDF', article.pdfUrl, false);
+        actions += link('DOI', article.doiUrl, false);
+        actions += link('PubMed', article.pmidUrl, false);
+        if (article.doi) actions += '<button type="button" data-copy-doi="' + esc(article.doi) + '">复制 DOI</button>';
+        return '<article class="paper-card">' +
+          '<div class="paper-meta"><span>' + esc(article.date) + '</span><span class="' + readingClass(article.readingType) + '">' + esc(article.readingType) + '</span></div>' +
+          '<h3>' + esc(article.topic) + '</h3>' +
+          (article.authors ? '<p class="paper-byline">' + esc(article.authors) + '</p>' : '') +
+          '<p class="paper-summary">' + esc(article.summary) + '</p>' +
+          '<div class="tag-list">' + tags + (article.evidence !== '未分层' ? '<span class="tag">证据 ' + esc(article.evidence) + '</span>' : '') + '</div>' +
+          '<div class="ids">' + esc(ids.join(' · ') || 'DOI / PMID 待索引') + '</div>' +
+          '<div class="card-actions">' + actions + '</div>' +
+          '</article>';
+      }
+
+      function normalized(value) {
+        return String(value || '').toLocaleLowerCase('zh-CN').replace(/s+/g, ' ').trim();
+      }
+
+      function matches(article) {
+        var haystack = normalized([article.topic, article.englishTitle, article.authors, article.summary, article.doi, article.pmid, article.status, article.tags.join(' ')].join(' '));
+        var queryMatches = !state.query || haystack.includes(normalized(state.query));
+        var tagMatches = state.tag === '全部' || article.tags.includes(state.tag);
+        var statusMatches = state.status === '全部' || (state.status === '开放全文' ? article.isOpenAccess : article.readingType === state.status);
+        return queryMatches && tagMatches && statusMatches;
+      }
+
+      function render() {
+        var articles = data.articles.filter(matches).sort(function (a, b) {
+          var direction = state.sort === 'newest' ? -1 : 1;
+          return direction * a.dateKey.localeCompare(b.dateKey) || a.topic.localeCompare(b.topic, 'zh-CN');
+        });
+        grid.innerHTML = articles.map(articleCard).join('');
+        resultCount.textContent = '显示 ' + articles.length + ' / ' + data.articles.length + ' 篇';
+        empty.style.display = articles.length ? 'none' : 'block';
+        grid.style.display = articles.length ? 'grid' : 'none';
+      }
+
+      async function copyText(text, button) {
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (error) {
+          var area = document.createElement('textarea');
+          area.value = text; area.style.position = 'fixed'; area.style.opacity = '0';
+          document.body.appendChild(area); area.select(); document.execCommand('copy'); area.remove();
+        }
+        var previous = button.textContent; button.textContent = '已复制';
+        setTimeout(function () { button.textContent = previous; }, 1400);
+      }
+
+      document.getElementById('searchInput').addEventListener('input', function (event) { state.query = event.target.value; render(); });
+      document.getElementById('statusFilter').addEventListener('change', function (event) { state.status = event.target.value; render(); });
+      document.getElementById('sortOrder').addEventListener('change', function (event) { state.sort = event.target.value; render(); });
+      document.querySelector('.filter-row').addEventListener('click', function (event) {
+        var button = event.target.closest('[data-tag]'); if (!button) return;
+        state.tag = button.dataset.tag;
+        document.querySelectorAll('[data-tag]').forEach(function (item) { var active = item === button; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); });
+        render();
+      });
+      grid.addEventListener('click', function (event) { var button = event.target.closest('[data-copy-doi]'); if (button) copyText(button.dataset.copyDoi, button); });
+      document.getElementById('printButton').addEventListener('click', function () { window.print(); });
+      render();
+    }());
+  </script>
+</body>
+</html>

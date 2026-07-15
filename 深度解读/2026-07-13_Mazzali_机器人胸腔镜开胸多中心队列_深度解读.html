@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mazzali 2026 机器人、胸腔镜与开胸肺切除多中心研究的中文深度解读">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d3441'/%3E%3Cpath d='M23 15h15c9 0 14 5 14 13 0 6-3 10-9 12l11 9H41l-9-8h-1v8H23V15zm8 8v11h7c4 0 6-2 6-6s-2-5-6-5h-7z' fill='%23fff3dd'/%3E%3C/svg%3E">
+  <title>Mazzali 2026 多中心机器人肺切除研究｜深度解读</title>
+  <style>
+    :root {
+      --ink: #17323b;
+      --ink-soft: #354f57;
+      --muted: #667a80;
+      --navy: #0d3441;
+      --navy-deep: #082630;
+      --teal: #176f78;
+      --teal-soft: #dcecef;
+      --amber: #b9761d;
+      --amber-soft: #fff3dd;
+      --red: #8e4138;
+      --red-soft: #f8e9e6;
+      --green: #2f6852;
+      --green-soft: #e4f0e9;
+      --paper: #fffefa;
+      --wash: #edf2f2;
+      --line: #c9d5d7;
+      --shadow: 0 18px 50px rgba(21, 49, 58, .09);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(13, 52, 65, .025) 1px, transparent 1px),
+        var(--wash);
+      background-size: 100% 28px;
+      font-family: "Avenir Next", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.74;
+    }
+    a { color: var(--teal); text-underline-offset: 3px; }
+    a:hover { color: var(--navy); }
+    button { font: inherit; }
+
+    .hero {
+      color: #f7fbfb;
+      background:
+        radial-gradient(circle at 83% 16%, rgba(55, 153, 158, .27), transparent 28%),
+        linear-gradient(112deg, var(--navy-deep), var(--navy));
+      border-bottom: 7px solid var(--amber);
+    }
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 46px 0 38px;
+      position: relative;
+    }
+    .issue-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #a8ced0;
+      border-bottom: 1px solid rgba(255,255,255,.18);
+      padding-bottom: 12px;
+    }
+    .hero h1 {
+      max-width: 920px;
+      margin: 28px 0 10px;
+      font-family: "Iowan Old Style", "Songti SC", "Noto Serif SC", Georgia, serif;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -.025em;
+      font-weight: 650;
+    }
+    .english-title {
+      max-width: 920px;
+      margin: 0;
+      color: #bdd4d5;
+      font-family: "Iowan Old Style", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+    .byline { margin: 24px 0 0; color: #dce9ea; font-size: 14px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 29px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.08);
+      color: #eef8f8;
+      font-size: 12px;
+      letter-spacing: .04em;
+    }
+    .badge.accent { background: var(--amber); border-color: var(--amber); color: #fff; }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 28px;
+    }
+    .actions button {
+      border: 1px solid rgba(255,255,255,.34);
+      color: #fff;
+      background: transparent;
+      padding: 9px 13px;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+    .actions button:hover { background: #fff; color: var(--navy); transform: translateY(-1px); }
+
+    .page-shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 26px auto 70px;
+      display: grid;
+      grid-template-columns: 225px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .toc {
+      position: sticky;
+      top: 18px;
+      background: var(--navy);
+      color: #e8f1f2;
+      padding: 19px 16px 17px;
+      box-shadow: var(--shadow);
+    }
+    .toc-title {
+      margin: 0 0 12px;
+      color: #93c6c8;
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,.09);
+      color: #e6eff0;
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .toc a:hover { color: #f4c37f; }
+    .toc-note { margin: 14px 0 0; color: #9eb9bd; font-size: 11px; line-height: 1.55; }
+
+    main { min-width: 0; }
+    section {
+      background: var(--paper);
+      border-top: 3px solid var(--teal);
+      padding: 27px 30px 30px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 18px;
+    }
+    section > h2 {
+      margin: 0 0 17px;
+      font-family: "Iowan Old Style", "Songti SC", "Noto Serif SC", Georgia, serif;
+      font-size: 27px;
+      line-height: 1.25;
+      font-weight: 680;
+    }
+    h3 { margin: 24px 0 8px; font-size: 17px; }
+    p { margin: 9px 0; }
+    ul, ol { padding-left: 1.3em; }
+    li + li { margin-top: 7px; }
+    .eyebrow {
+      margin: 0 0 6px;
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .lead {
+      margin: 0;
+      font-family: "Iowan Old Style", "Songti SC", "Noto Serif SC", Georgia, serif;
+      font-size: 23px;
+      line-height: 1.58;
+      color: var(--navy);
+    }
+    .callout {
+      margin: 18px 0 0;
+      padding: 15px 17px;
+      border-left: 4px solid var(--amber);
+      background: var(--amber-soft);
+    }
+    .status-note {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px 13px;
+      align-items: start;
+      margin-top: 18px;
+      padding: 14px 16px;
+      background: var(--teal-soft);
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+    .status-note strong { color: var(--navy); }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .metric {
+      min-height: 134px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--teal);
+      background: #fff;
+    }
+    .metric.caution { border-top-color: var(--amber); }
+    .metric .label { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+    .metric .value {
+      margin: 7px 0 4px;
+      color: var(--navy);
+      font-family: "Iowan Old Style", Georgia, serif;
+      font-size: 31px;
+      font-weight: 700;
+      line-height: 1.08;
+    }
+    .metric .caption { color: var(--ink-soft); font-size: 12px; line-height: 1.5; }
+
+    .pico-grid, .two-col, .boundary-grid, .bias-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+    .pico-item { padding: 16px; border: 1px solid var(--line); background: #fff; }
+    .pico-letter {
+      display: inline-grid;
+      place-items: center;
+      width: 31px;
+      height: 31px;
+      margin-right: 8px;
+      background: var(--navy);
+      color: #fff;
+      font-family: Georgia, serif;
+      font-weight: 700;
+    }
+    .mini-card { padding: 15px 17px; border: 1px solid var(--line); background: #fff; }
+    .mini-card h3 { margin-top: 0; }
+    .mini-card.good { border-left: 4px solid var(--green); }
+    .mini-card.warn { border-left: 4px solid var(--amber); }
+    .mini-card.bad { border-left: 4px solid var(--red); }
+
+    .table-wrap { overflow-x: auto; margin: 14px 0; border: 1px solid var(--line); }
+    table { width: 100%; min-width: 700px; border-collapse: collapse; background: #fff; font-size: 13px; }
+    th { color: #fff; background: var(--navy); text-align: left; font-weight: 650; }
+    th, td { padding: 10px 11px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    tbody tr:nth-child(even) { background: #f5f8f8; }
+    .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .signal { color: var(--green); font-weight: 700; }
+    .uncertain { color: var(--amber); font-weight: 700; }
+    .neutral { color: var(--muted); }
+
+    details { margin: 12px 0; border: 1px solid var(--line); background: #fff; }
+    summary { padding: 13px 15px; cursor: pointer; color: var(--navy); font-weight: 700; }
+    details > div { padding: 0 16px 15px; }
+    code { padding: 2px 5px; background: #edf3f3; color: var(--navy); }
+
+    .bias-item { padding: 15px; border: 1px solid var(--line); background: #fff; }
+    .risk {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 3px 7px;
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: .06em;
+    }
+    .risk.high { background: var(--red); }
+    .risk.medium { background: var(--amber); }
+    .risk.low { background: var(--green); }
+
+    .boundary { padding: 18px; }
+    .boundary h3 { margin: 0 0 10px; }
+    .boundary.can { background: var(--green-soft); border-top: 4px solid var(--green); }
+    .boundary.cannot { background: var(--red-soft); border-top: 4px solid var(--red); }
+
+    .share-box {
+      padding: 21px;
+      border: 1px solid var(--amber);
+      background: #fffaf0;
+      font-family: "Songti SC", "Noto Serif SC", Georgia, serif;
+      font-size: 16px;
+    }
+    .reference-list { word-break: break-word; }
+    .reference-list li { margin-bottom: 10px; }
+    .footer-note { color: var(--muted); font-size: 12px; }
+
+    @media (max-width: 800px) {
+      .hero-inner, .page-shell { width: min(100% - 24px, var(--max)); }
+      .issue-line { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .page-shell { grid-template-columns: 1fr; }
+      .toc { position: static; }
+      .toc a { display: inline-block; margin-right: 10px; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .pico-grid, .two-col, .boundary-grid, .bias-grid { grid-template-columns: 1fr; }
+      section { padding: 22px 18px 24px; }
+      .hero h1 { font-size: 36px; }
+    }
+    @media (max-width: 520px) {
+      .metrics { grid-template-columns: 1fr; }
+      .actions button { width: 100%; }
+    }
+    @media print {
+      @page { size: A4; margin: 15mm; }
+      body { background: #fff; color: #000; font-size: 10.5pt; }
+      .hero { color: #000; background: #fff; border-bottom: 2px solid #000; }
+      .hero-inner, .page-shell { width: 100%; }
+      .hero-inner { padding: 0 0 14px; }
+      .hero h1, .english-title, .byline, .issue-line { color: #000; }
+      .badge { color: #000; border-color: #555; background: #fff; }
+      .toc, .actions { display: none !important; }
+      .page-shell { display: block; margin: 14px 0 0; }
+      section { box-shadow: none; break-inside: avoid; border: 1px solid #bbb; border-top: 2px solid #000; margin-bottom: 10px; }
+      a { color: #000; text-decoration: none; }
+      .metric, .pico-item, .mini-card, .bias-item, details { break-inside: avoid; }
+      details > div { display: block !important; }
+      table { font-size: 8.5pt; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="issue-line">
+        <span>Thoracic Evidence Note · No. 001</span>
+        <span>检索与核对截止 2026-07-13</span>
+      </div>
+      <h1>机器人、胸腔镜与开胸肺叶/肺段切除：多中心研究深度解读</h1>
+      <p class="english-title">Robotic vs thoracoscopic vs open lobectomy and segmentectomy for lung cancer: a multicenter cohort study in the ATS of Milan</p>
+      <p class="byline">Mazzali C, Buzzoni C, Grignani F, et al. · Journal of Robotic Surgery · 2026;20:577</p>
+      <div class="badges">
+        <span class="badge accent">全文解读</span>
+        <span class="badge">证据等级 B*</span>
+        <span class="badge">8 中心观察性队列</span>
+        <span class="badge">IPW 调整</span>
+        <span class="badge">PMID 42237053</span>
+      </div>
+      <div class="actions" aria-label="报告操作">
+        <button type="button" data-copy>复制同行速读摘要</button>
+        <button type="button" data-toggle>展开全部统计细节</button>
+        <button type="button" data-print>打印 / 另存 PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <nav class="toc" aria-label="本文目录">
+      <p class="toc-title">Evidence map</p>
+      <a href="#summary">01 临床一句话</a>
+      <a href="#key-numbers">02 关键数字</a>
+      <a href="#pico">03 研究问题与 PICO</a>
+      <a href="#methods">04 方法学拆解</a>
+      <a href="#results">05 结果重构</a>
+      <a href="#statistics">06 统计学审读</a>
+      <a href="#bias">07 偏倚与利益冲突</a>
+      <a href="#applicability">08 临床适用性</a>
+      <a href="#comparison">09 既有证据对照</a>
+      <a href="#boundaries">10 结论边界</a>
+      <a href="#share">11 同行速读摘要</a>
+      <a href="#references">12 引用与原文</a>
+      <p class="toc-note">* 证据等级 B 为本助手的阅读分层，不等同于正式 GRADE 评级。</p>
+    </nav>
+
+    <main>
+      <section id="summary">
+        <p class="eyebrow">01 · Clinical bottom line</p>
+        <h2>临床一句话</h2>
+        <p class="lead">在米兰区域多中心网络中，RATS 与较少的中转开胸和较短的术后住院相关；但它并未在这项观察性研究中被证明能降低 VATS 的总体并发症，也不能证明生存获益。</p>
+        <div class="callout"><strong>真正可带走的结论：</strong> 这篇文章强化了机器人平台在成熟团队中的围术期“信号”，尤其是中转和住院；它没有解决“机器人是否普遍优于胸腔镜”这一因果问题。</div>
+        <div class="status-note">
+          <strong>解读状态</strong>
+          <span>本页为<strong>全文解读</strong>：已读取 9 页开放全文并核对正文、图 1 与基线表。若只能取得正式摘要，未来页面会标为<strong>摘要级解读</strong>，不会推测摘要未报告的方法或结局。</span>
+        </div>
+      </section>
+
+      <section id="key-numbers">
+        <p class="eyebrow">02 · Numbers that matter</p>
+        <h2>关键数字</h2>
+        <div class="metrics">
+          <article class="metric"><div class="label">分析队列</div><div class="value">1,605</div><div class="caption">OT 647 · VATS 653 · RATS 305</div></article>
+          <article class="metric"><div class="label">中转开胸 · VATS vs RATS</div><div class="value">OR 2.47</div><div class="caption">95% CI 1.43–4.24；调整后关联</div></article>
+          <article class="metric"><div class="label">住院时长分位 · VATS vs RATS</div><div class="value">OR 1.90</div><div class="caption">95% CI 1.47–2.44；不是“少住 1.9 天”</div></article>
+          <article class="metric"><div class="label">总体并发症 · VATS vs RATS</div><div class="value">OR 1.15</div><div class="caption">95% CI 0.84–1.57；无明确差异</div></article>
+          <article class="metric caution"><div class="label">总生存 · VATS vs RATS</div><div class="value">HR 1.33</div><div class="caption">95% CI 0.98–1.82；P=0.0717</div></article>
+          <article class="metric caution"><div class="label">因果确定性</div><div class="value">有限</div><div class="caption">非随机；中心、年代与治疗信息仍可混杂</div></article>
+        </div>
+      </section>
+
+      <section id="pico">
+        <p class="eyebrow">03 · Framing the question</p>
+        <h2>研究问题与 PICO</h2>
+        <div class="pico-grid">
+          <article class="pico-item"><span class="pico-letter">P</span><strong>人群</strong><p>米兰 ATS 区域 8 家胸外科中心中，接受肺叶或解剖性肺段切除的原发性肺癌患者；有效性分析共 1,605 例。</p></article>
+          <article class="pico-item"><span class="pico-letter">I</span><strong>干预</strong><p>机器人辅助胸腔镜手术（RATS），305 例，占分析队列 19.0%。</p></article>
+          <article class="pico-item"><span class="pico-letter">C</span><strong>对照</strong><p>传统开胸（OT，647 例）与电视胸腔镜（VATS，653 例）。</p></article>
+          <article class="pico-item"><span class="pico-letter">O</span><strong>结局</strong><p>主要：术后并发症、30 天再入院、中转开胸。次要：手术时间、术后住院、180 天死亡和总生存。</p></article>
+        </div>
+        <p class="callout"><strong>研究问题本质：</strong> 在真实区域医疗网络内，不同手术平台与结局是否仍有关联，且这种关联能否在调整已测量的病例组合后保留。</p>
+      </section>
+
+      <section id="methods">
+        <p class="eyebrow">04 · Methods under the microscope</p>
+        <h2>方法学拆解</h2>
+        <div class="two-col">
+          <article class="mini-card good"><h3>值得肯定</h3><ul><li>来自同一卫生管理区域的 8 中心真实世界队列，降低单中心流程偶然性。</li><li>同时纳入回顾性 2016–2021 和前瞻性 2023–2025 队列。</li><li>将临床、肿瘤和行政数据联结，随访生命状态与再入院。</li><li>使用多分类倾向模型和稳定化、截断的 IPW，目标为平均治疗效应。</li><li>报告回顾性队列限制性敏感性分析。</li></ul></article>
+          <article class="mini-card warn"><h3>方法学代价</h3><ul><li>不是随机分配，平台选择与患者、医院及术者特征共同决定。</li><li>只有 3 家医院在研究开始时具备机器人平台，随后新增 1 家。</li><li>RATS 病例占比低，且在 2023–2025 年比例更高，存在年代与扩散效应。</li><li>肺功能、围手术期治疗与术者经验没有进入模型。</li><li>住院和手术时间被分为四分位，牺牲了原始连续信息。</li></ul></article>
+        </div>
+
+        <h3>IPW 调整了什么</h3>
+        <p>接受三种术式的概率由以下变量估计：性别、年龄、吸烟状态、手术时期、切除类型、癌症分期、COPD、Charlson 合并症指数（CCI）及术前医疗服务利用。时期被分为 2016–2018、2019–2021、2023–2025。作者报告加权后基线达到良好平衡，但主要平衡图位于在线补充材料。</p>
+        <details>
+          <summary>为什么“加权后平衡”仍不等于随机试验？</summary>
+          <div><p>IPW 只能平衡被观察、被准确测量并进入模型的变量。FEV1、DLCO、虚弱程度、肿瘤技术复杂度、具体新辅助/辅助治疗、医院流程、术者年资和机器人经验均未被完整建模。因此它改善可比性，但不能清除残余混杂。</p></div>
+        </details>
+      </section>
+
+      <section id="results">
+        <p class="eyebrow">05 · Reconstructing the results</p>
+        <h2>结果重构</h2>
+        <h3>先看基线：三组原本并不相同</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>基线特征</th><th>OT</th><th>VATS</th><th>RATS</th><th>含义</th></tr></thead>
+            <tbody>
+              <tr><td>例数</td><td class="num">647</td><td class="num">653</td><td class="num">305</td><td>机器人样本最少</td></tr>
+              <tr><td>I 期</td><td class="num">47.6%</td><td class="num">69.4%</td><td class="num">72.1%</td><td>OT 明显更晚期</td></tr>
+              <tr><td>肿瘤中位径</td><td class="num">27 mm</td><td class="num">21 mm</td><td class="num">19 mm</td><td>RATS 病灶更小</td></tr>
+              <tr><td>CCI ≥6</td><td class="num">29.1%</td><td class="num">15.6%</td><td class="num">17.4%</td><td>OT 合并症负担更高</td></tr>
+              <tr><td>鳞癌</td><td class="num">21.0%</td><td class="num">13.3%</td><td class="num">10.8%</td><td>病理构成不同</td></tr>
+              <tr><td>2023–2025 病例</td><td class="num">3.9%</td><td class="num">14.5%</td><td class="num">23.3%</td><td>RATS 更偏近期</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>这些差异解释了为什么未经调整的生存曲线不能直接比较，也说明 OT 与 RATS 的生存差异尤其容易受适应证和病例复杂度混杂。</p>
+
+        <h3>原始结局</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>结局</th><th>OT</th><th>VATS</th><th>RATS</th><th>阅读提示</th></tr></thead>
+            <tbody>
+              <tr><td>总体术后并发症</td><td class="num">31.7%</td><td class="num">25.7%</td><td class="num">21.6%</td><td>未经调整，病例组合影响大</td></tr>
+              <tr><td>30 天再入院</td><td class="num">4.2%</td><td class="num">3.4%</td><td class="num">4.6%</td><td>三组接近</td></tr>
+              <tr><td>中转开胸</td><td>—</td><td class="num">12.7%</td><td class="num">4.1%</td><td>VATS 与 RATS 的绝对差 8.6 个百分点；不可跨中心照搬</td></tr>
+              <tr><td>手术时间中位数</td><td class="num">133 min</td><td class="num">193 min</td><td class="num">174 min</td><td>定义和团队流程可影响</td></tr>
+              <tr><td>住院中位数</td><td class="num">6 d</td><td class="num">5 d</td><td class="num">4 d</td><td>真实世界流程与平台共同作用</td></tr>
+              <tr><td>180 天死亡</td><td class="num">4.5%</td><td class="num">2.6%</td><td class="num">1.7%</td><td>事件少；调整后均不显著</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>IPW 调整后的核心比较</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>VATS vs RATS</th><th>效应值</th><th>95% CI</th><th>判断</th></tr></thead>
+            <tbody>
+              <tr><td>总生存</td><td class="num">HR 1.33</td><td class="num">0.98–1.82</td><td class="uncertain">P=0.0717；不确定</td></tr>
+              <tr><td>180 天死亡</td><td class="num">OR 1.41</td><td class="num">0.54–3.71</td><td class="neutral">区间很宽</td></tr>
+              <tr><td>总体并发症</td><td class="num">OR 1.15</td><td class="num">0.84–1.57</td><td class="neutral">无明确差异</td></tr>
+              <tr><td>30 天再入院</td><td class="num">OR 0.94</td><td class="num">0.47–1.90</td><td class="neutral">无明确差异</td></tr>
+              <tr><td>进入更高住院时长分位</td><td class="num">OR 1.90</td><td class="num">1.47–2.44</td><td class="signal">方向支持 RATS</td></tr>
+              <tr><td>进入更高手术时间分位</td><td class="num">OR 1.40</td><td class="num">1.09–1.78</td><td class="signal">本网络中 VATS 更久</td></tr>
+              <tr><td>中转开胸</td><td class="num">OR 2.47</td><td class="num">1.43–4.24</td><td class="signal">最稳健的围术期信号</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>OT 与 RATS 比较中，OT 的住院时长分位更高（OR 3.38，95% CI 2.62–4.37），并发症更多（OR 1.55，95% CI 1.14–2.11），总生存较差（HR 1.51，95% CI 1.11–2.05）。但 OT 组病期更晚、肿瘤更大、合并症更多，长期结局尤其不能简单归因于切口或平台。</p>
+
+        <h3>肿瘤学质量与敏感性分析</h3>
+        <ul>
+          <li>显微切缘阳性率低：OT 1.4%、VATS 1.1%、RATS 1.0%；肉眼切缘阳性仅见于 OT（0.4%）。</li>
+          <li>纵隔淋巴结中位数：OT 6（IQR 3–11）、VATS 5（3–7）、RATS 6（4–10）；这是<strong>未经调整</strong>的比较。</li>
+          <li>限制到 1,414 例回顾性患者后，VATS vs RATS 的 OS 变为显著（HR 1.43，95% CI 1.04–1.96），而 OT vs RATS 的并发症关联反而衰减（OR 1.29，95% CI 0.92–1.82）。方向变化提示结论受时期和样本构成影响。</li>
+        </ul>
+      </section>
+
+      <section id="statistics">
+        <p class="eyebrow">06 · Statistical reading</p>
+        <h2>统计学审读</h2>
+        <details open>
+          <summary>1. OR 1.90 不能解读成“少住 1.9 天”</summary>
+          <div><p>作者把住院天数按全队列四分位分成四档，再做序数 Logistic 回归。因此 OR 1.90 表示 VATS 患者进入更高住院时长档位的优势比更高，而不是平均多住 1.90 天。原始中位数 5 天 vs 4 天只提供描述性尺度。</p></div>
+        </details>
+        <details open>
+          <summary>2. 中转信号为何相对更可信</summary>
+          <div><p>VATS 与 RATS 的原始差异为 12.7% vs 4.1%，加权后 OR 2.47（95% CI 1.43–4.24），方向和效应均保留。它是临床硬终点，且作者也将其视为最稳健差异。不过，中转阈值仍受术者偏好、中心救援策略和病例难度影响。</p></div>
+        </details>
+        <details>
+          <summary>3. IPW 的优势与盲区</summary>
+          <div><p>IPW 对三种治疗构建平均治疗效应，能够利用全样本并减少已测量基线失衡。盲区是未测量变量：肺功能、虚弱、肿瘤粘连或血管难度、新辅助/辅助治疗、中心流程和术者学习曲线。加权不能修复没有被收集的数据。</p></div>
+        </details>
+        <details>
+          <summary>4. 生存敏感性结果不等于更强的因果证据</summary>
+          <div><p>回顾性子集中 VATS vs RATS 的 HR 跨过显著性阈值，说明估计对时期构成敏感。它可能反映随访成熟度，也可能反映不同年代、中心及治疗路径。研究没有系统收集新辅助和辅助治疗，因而不能把生存差异归因于平台。</p></div>
+        </details>
+        <details>
+          <summary>5. 多结局与模型报告</summary>
+          <div><p>研究同时分析 7 个结局并进行多组对比，正文采用双侧 α=0.05，但未报告多重比较校正。住院和手术时间使用序数模型，主要正文未展示比例优势假设检验。对边缘显著或敏感性分析才显著的结果，应视为探索性。</p></div>
+        </details>
+      </section>
+
+      <section id="bias">
+        <p class="eyebrow">07 · Bias and transparency</p>
+        <h2>偏倚与利益冲突</h2>
+        <div class="bias-grid">
+          <article class="bias-item"><span class="risk high">高风险</span><strong>适应证混杂</strong><p>OT 更晚期、更大肿瘤、合并症更多；RATS 更偏早期和近期病例。</p></article>
+          <article class="bias-item"><span class="risk high">高风险</span><strong>中心与术者效应</strong><p>机器人平台分布不均；无术者量、年资、平台经验和团队学习数据。</p></article>
+          <article class="bias-item"><span class="risk high">高风险</span><strong>治疗路径混杂</strong><p>未系统收集新辅助和辅助治疗，限制长期生存解释。</p></article>
+          <article class="bias-item"><span class="risk medium">中风险</span><strong>年代效应</strong><p>RATS 在 2023–2025 占比更高；ERAS、分期和辅助治疗也可能随时间改变。</p></article>
+          <article class="bias-item"><span class="risk medium">中风险</span><strong>功能状态代理不足</strong><p>缺少 FEV1、DLCO 与虚弱指标；COPD 和医疗利用只是部分代理。</p></article>
+          <article class="bias-item"><span class="risk low">相对较低</span><strong>硬终点测量</strong><p>死亡、再入院和中转相对客观；但并发症定义与中心报告仍可能不同。</p></article>
+        </div>
+        <h3>资金、披露与数据</h3>
+        <ul>
+          <li>作者声明本研究未获得专项经费。</li>
+          <li>Mario Nosotti 报告获得 Fondazione IRCCS Ca’ Granda Ospedale Maggiore Policlinico 的财务支持；其余作者声明无相关财务或非财务利益。</li>
+          <li>个体层面数据因隐私不能公开；汇总数据可向通信作者合理申请。</li>
+          <li>文章采用 CC BY-NC-ND 4.0 许可；本页为独立学术解读，不复制或改绘受限图像。</li>
+        </ul>
+      </section>
+
+      <section id="applicability">
+        <p class="eyebrow">08 · External validity</p>
+        <h2>临床适用性</h2>
+        <div class="two-col">
+          <article class="mini-card good"><h3>较适合参考</h3><ul><li>具备成熟 VATS 与 RATS 项目的区域中心网络。</li><li>早期 NSCLC 的肺叶或解剖性肺段切除。</li><li>希望评估中转、住院和流程效率的项目质量改进。</li><li>能够以本中心基线中转率重新计算绝对获益。</li></ul></article>
+          <article class="mini-card warn"><h3>外推需谨慎</h3><ul><li>刚启动机器人项目、学习曲线尚未稳定的中心。</li><li>复杂袖式、血管成形、扩大切除或新辅助后病例。</li><li>不同住院支付、胸管和 ERAS 路径的医疗系统。</li><li>以长期生存或成本效益为主要决策依据的场景。</li></ul></article>
+        </div>
+        <p class="callout"><strong>对科室决策的实际意义：</strong> 文章最适合用来支持“监测中转率和住院流程”的质量指标设计，而不是单独支持设备采购或把 RATS 设为所有患者的优先术式。</p>
+      </section>
+
+      <section id="comparison">
+        <p class="eyebrow">09 · Context with higher-level evidence</p>
+        <h2>与既有证据对照</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>证据</th><th>范围</th><th>主要结论</th><th>与本研究关系</th></tr></thead>
+            <tbody>
+              <tr><td>Lamas 2025/2026 RCT Meta</td><td>5 项随机研究，712 例</td><td>中转 RR 0.65（0.36–1.20）、总体并发症 RR 0.91（0.69–1.21），均无明确差异；RATS 清扫站数更多</td><td>随机证据未确认 Mazzali 观察到的中转优势</td></tr>
+              <tr><td>Xu 2026 伞形综述</td><td>13 篇 Meta/系统综述</td><td>总体安全性与 R0 大体相当；淋巴结、住院和中转方向可能有利于 RATS；长期证据受回顾性研究限制</td><td>与 Mazzali 的围术期方向一致，也同样警告生存混杂</td></tr>
+              <tr><td>Mazzali 2026</td><td>8 中心，1,605 例</td><td>RATS 与较少中转、更短住院相关；并发症与 VATS 相近</td><td>提供区域真实世界增量信息，但不能覆盖随机证据的不确定性</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>综合判断：</strong> 新研究使“成熟团队可能获得围术期流程优势”更可信，但没有把证据推进到“RATS 已在并发症或生存方面优于 VATS”。</p>
+      </section>
+
+      <section id="boundaries">
+        <p class="eyebrow">10 · Claim discipline</p>
+        <h2>结论边界</h2>
+        <div class="boundary-grid">
+          <article class="boundary can"><h3>可以得出的结论</h3><ul><li>在该区域网络中，RATS 与较低 VATS 中转率相关。</li><li>RATS 与更低的术后住院时长分位相关。</li><li>RATS 与 VATS 的调整后总体并发症、30 天再入院和 180 天死亡没有明确差异。</li><li>病例组合和平台扩散明显影响组间比较。</li></ul></article>
+          <article class="boundary cannot"><h3>不能得出的结论</h3><ul><li>不能证明 RATS 导致更少中转或更短住院。</li><li>不能证明 RATS 降低总体并发症。</li><li>不能证明生存获益，尤其不能用 OT 与 RATS 的 HR 证明平台效应。</li><li>不能证明所有医院、术者或复杂病例都能复制该结果。</li><li>不能据此完成成本效益或设备采购判断。</li></ul></article>
+        </div>
+        <p class="callout"><strong>一句话纪律：</strong> 这是一项做得较好的比较效果观察研究，能强化关联，不能替代随机化。</p>
+      </section>
+
+      <section id="share">
+        <p class="eyebrow">11 · Ready to share with peers</p>
+        <h2>同行速读摘要</h2>
+        <div class="share-box share-text">Mazzali 等在米兰 ATS 区域 8 家医院比较了 1,605 例肺叶或肺段切除：OT 647、VATS 653、RATS 305。经逆概率加权后，VATS 相比 RATS 的中转开胸优势比为 2.47（95%CI 1.43–4.24）；进入更高住院时长分位的优势比为 1.90（1.47–2.44）。但 VATS 与 RATS 的总体并发症、30 天再入院和 180 天死亡无明确差异。研究的主要价值是提供成熟区域网络中的真实世界围术期信号；主要限制是非随机分配、机器人平台与年代/中心共线、缺少 FEV1、DLCO、系统治疗和术者经验。敏感性分析中生存估计发生显著性变化，也提示长期结局不稳定。因此，可谨慎认为 RATS 在成熟团队中可能减少中转并加快出院，但不能证明平台本身改善并发症或生存。</div>
+      </section>
+
+      <section id="references">
+        <p class="eyebrow">12 · Sources</p>
+        <h2>引用与原文</h2>
+        <ol class="reference-list">
+          <li>Mazzali C, Buzzoni C, Grignani F, et al. Robotic vs thoracoscopic vs open lobectomy and segmentectomy for lung cancer: a multicenter cohort study in the ATS of Milan. <em>J Robot Surg.</em> 2026;20:577. <a href="https://doi.org/10.1007/s11701-026-03496-1">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42237053/">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13233879/">开放全文</a> · <a href="../原文/Mazzali_2026_Robotic_vs_thoracoscopic_vs_open_lobectomy_and_seg.pdf">本地 PDF</a></li>
+          <li>Lamas FM, et al. Robotic-assisted thoracic surgery versus video-assisted thoracic surgery for patients undergoing lung resection: a systematic review and meta-analysis of randomized controlled trials. <em>Gen Thorac Cardiovasc Surg.</em> 2026;74:1–10. <a href="https://pubmed.ncbi.nlm.nih.gov/41037231/">PubMed</a></li>
+          <li>Xu Y, et al. Robotic-assisted thoracic surgery for resectable lung cancer: efficacy, safety and surgical approaches—an umbrella review of meta-analyses. <em>BMC Surg.</em> 2026;26:123. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12892708/">开放全文</a></li>
+        </ol>
+        <p class="footer-note">解读基于开放全文、正式摘要及文中图表，检索核对截止 2026-07-13。仅供胸外科学术交流和继续教育，不替代患者个体化诊疗决策。</p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    async function writeToClipboard(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return;
+        } catch (error) {
+          // Local file contexts may deny the modern clipboard API; use a selection fallback.
+        }
+      }
+      const area = document.createElement('textarea');
+      area.value = text;
+      area.setAttribute('readonly', '');
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand('copy');
+      area.remove();
+    }
+
+    async function copyShareSummary() {
+      const text = document.querySelector('#share .share-text').innerText.trim();
+      await writeToClipboard(text);
+      const button = document.querySelector('[data-copy]');
+      const previous = button.textContent;
+      button.textContent = '已复制';
+      setTimeout(() => { button.textContent = previous; }, 1600);
+    }
+
+    function toggleDetails() {
+      const blocks = [...document.querySelectorAll('details')];
+      const shouldOpen = blocks.some((item) => !item.open);
+      blocks.forEach((item) => { item.open = shouldOpen; });
+      document.querySelector('[data-toggle]').textContent = shouldOpen ? '收起统计细节' : '展开全部统计细节';
+    }
+
+    document.querySelector('[data-copy]').addEventListener('click', copyShareSummary);
+    document.querySelector('[data-toggle]').addEventListener('click', toggleDetails);
+    document.querySelector('[data-print]').addEventListener('click', () => window.print());
+  </script>
+</body>
+</html>
