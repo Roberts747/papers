@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jereisat 2026 机器人右下肺叶切除后缺血性支气管炎进展为支气管胸膜瘘的同行安全警示深度解读">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23102f3a'/%3E%3Cpath d='M31 10h3v18h8c7 0 12 5 12 12 0 8-6 14-15 14H25c-9 0-15-6-15-14 0-7 5-12 12-12h9V10zm-9 25c-3 0-5 2-5 5 0 4 3 7 8 7h5V35h-8zm12 0v12h5c5 0 8-3 8-7 0-3-2-5-5-5h-8z' fill='%23f5e9d5'/%3E%3C/svg%3E">
+  <title>Jereisat 2026｜机器人肺叶切除后 POIB 进展 BPF 深度解读</title>
+  <style>
+    :root {
+      --ink: #18343d;
+      --ink-soft: #3d555c;
+      --muted: #6b7c81;
+      --navy: #103745;
+      --navy-deep: #082630;
+      --teal: #176f78;
+      --teal-soft: #dcecef;
+      --amber: #b7761d;
+      --amber-soft: #fff3dc;
+      --red: #8d3f38;
+      --red-deep: #6f2925;
+      --red-soft: #f8e7e4;
+      --green: #356b55;
+      --green-soft: #e4f0e9;
+      --paper: #fffefa;
+      --wash: #edf2f2;
+      --line: #c9d6d8;
+      --shadow: 0 18px 48px rgba(20, 49, 58, .09);
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(13, 52, 65, .025) 1px, transparent 1px),
+        var(--wash);
+      background-size: 100% 28px;
+      font-family: "Avenir Next", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.74;
+    }
+    a { color: var(--teal); text-underline-offset: 3px; }
+    a:hover { color: var(--navy); }
+    button { font: inherit; }
+
+    .hero {
+      color: #f7fbfb;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(180, 72, 61, .24), transparent 27%),
+        linear-gradient(116deg, var(--navy-deep), var(--navy));
+      border-bottom: 7px solid var(--red);
+    }
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 44px 0 38px;
+    }
+    .issue-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.18);
+      color: #a9ced0;
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 940px;
+      margin: 27px 0 10px;
+      font-family: "Iowan Old Style", "Songti SC", "Noto Serif SC", Georgia, serif;
+      font-size: clamp(34px, 5vw, 60px);
+      font-weight: 650;
+      line-height: 1.08;
+      letter-spacing: -.025em;
+    }
+    .english-title {
+      max-width: 940px;
+      margin: 0;
+      color: #bdd4d5;
+      font-family: "Iowan Old Style", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+    .byline { margin: 23px 0 0; color: #dce9ea; font-size: 14px; }
+    .badges, .actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 29px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.08);
+      color: #eef8f8;
+      font-size: 12px;
+      letter-spacing: .04em;
+    }
+    .badge.alert { background: var(--red); border-color: var(--red); color: #fff; }
+    .actions button {
+      padding: 9px 13px;
+      border: 1px solid rgba(255,255,255,.34);
+      color: #fff;
+      background: transparent;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+    .actions button:hover { background: #fff; color: var(--navy); transform: translateY(-1px); }
+
+    .page-shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 26px auto 70px;
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .toc {
+      position: sticky;
+      top: 18px;
+      padding: 19px 16px 17px;
+      color: #e8f1f2;
+      background: var(--navy);
+      box-shadow: var(--shadow);
+    }
+    .toc-title { margin: 0 0 12px; color: #93c6c8; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+    .toc a { display: block; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.09); color: #e6eff0; text-decoration: none; font-size: 13px; }
+    .toc a:hover { color: #f1b9b3; }
+    .toc-note { margin: 14px 0 0; color: #9eb9bd; font-size: 11px; line-height: 1.55; }
+
+    main { min-width: 0; }
+    section {
+      margin-bottom: 18px;
+      padding: 27px 30px 30px;
+      border-top: 3px solid var(--teal);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      scroll-margin-top: 18px;
+    }
+    section.alert-section { border-top-color: var(--red); }
+    section > h2 {
+      margin: 0 0 17px;
+      font-family: "Iowan Old Style", "Songti SC", "Noto Serif SC", Georgia, serif;
+      font-size: 27px;
+      font-weight: 680;
+      line-height: 1.25;
+    }
+    h3 { margin: 23px 0 8px; font-size: 17px; }
+    p { margin: 9px 0; }
+    ul, ol { padding-left: 1.3em; }
+    li + li { margin-top: 7px; }
+    .eyebrow { margin: 0 0 6px; color: var(--teal); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .lead {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Iowan Old Style", "Songti SC", "Noto Serif SC", Georgia, serif;
+      font-size: 23px;
+      line-height: 1.58;
+    }
+    .callout { margin: 18px 0 0; padding: 15px 17px; border-left: 4px solid var(--amber); background: var(--amber-soft); }
+    .callout.danger { border-left-color: var(--red); background: var(--red-soft); }
+    .status-note {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px 13px;
+      align-items: start;
+      margin-top: 18px;
+      padding: 14px 16px;
+      color: var(--ink-soft);
+      background: var(--teal-soft);
+      font-size: 13px;
+    }
+    .status-note strong { color: var(--navy); }
+
+    .metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .metric { min-height: 132px; padding: 16px; border: 1px solid var(--line); border-top: 4px solid var(--teal); background: #fff; }
+    .metric.caution { border-top-color: var(--amber); }
+    .metric.danger { border-top-color: var(--red); }
+    .metric .label { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+    .metric .value { margin: 7px 0 4px; color: var(--navy); font-family: "Iowan Old Style", Georgia, serif; font-size: 31px; font-weight: 700; line-height: 1.08; }
+    .metric .caption { color: var(--ink-soft); font-size: 12px; line-height: 1.5; }
+
+    .pico-grid, .two-col, .boundary-grid, .bias-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+    .pico-item, .mini-card { padding: 16px; border: 1px solid var(--line); background: #fff; }
+    .pico-letter { display: inline-grid; place-items: center; width: 31px; height: 31px; margin-right: 8px; color: #fff; background: var(--navy); font-family: Georgia, serif; font-weight: 700; }
+    .mini-card h3 { margin-top: 0; }
+    .mini-card.good { border-left: 4px solid var(--green); }
+    .mini-card.warn { border-left: 4px solid var(--amber); }
+    .mini-card.bad { border-left: 4px solid var(--red); }
+    .mini-card.neutral { border-left: 4px solid var(--teal); }
+
+    .timeline { position: relative; margin: 8px 0 0; padding-left: 28px; }
+    .timeline::before { content: ""; position: absolute; left: 8px; top: 8px; bottom: 12px; width: 2px; background: var(--line); }
+    .timeline-item { position: relative; padding: 0 0 19px 12px; }
+    .timeline-item::before { content: ""; position: absolute; left: -26px; top: 7px; width: 12px; height: 12px; border: 3px solid var(--paper); border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 1px var(--teal); }
+    .timeline-item.alert::before { background: var(--red); box-shadow: 0 0 0 1px var(--red); }
+    .timeline-date { color: var(--teal); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .timeline-item.alert .timeline-date { color: var(--red); }
+    .uncertain { color: var(--muted); font-size: 12px; }
+
+    .mechanism-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 17px 0; }
+    .mechanism-step { position: relative; min-height: 150px; padding: 14px; border: 1px solid var(--line); background: #fff; }
+    .mechanism-step::after { content: "→"; position: absolute; right: -10px; top: 50%; z-index: 2; width: 20px; height: 20px; color: var(--red); background: var(--paper); text-align: center; line-height: 20px; font-weight: 800; }
+    .mechanism-step:last-child::after { display: none; }
+    .step-no { display: block; color: var(--red); font-family: Georgia, serif; font-size: 22px; font-weight: 700; }
+
+    .table-wrap { overflow-x: auto; margin: 14px 0; border: 1px solid var(--line); }
+    table { width: 100%; min-width: 760px; border-collapse: collapse; background: #fff; font-size: 13px; }
+    th { color: #fff; background: var(--navy); text-align: left; font-weight: 650; }
+    th, td { padding: 10px 11px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    tbody tr:nth-child(even) { background: #f5f8f8; }
+    .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .tag { display: inline-block; padding: 2px 7px; border-radius: 99px; font-size: 11px; white-space: nowrap; }
+    .tag.reported { color: var(--green); background: var(--green-soft); }
+    .tag.inference { color: #835417; background: var(--amber-soft); }
+    .tag.unknown { color: var(--red); background: var(--red-soft); }
+
+    details { margin: 10px 0; border: 1px solid var(--line); background: #fff; }
+    summary { padding: 12px 14px; color: var(--navy); cursor: pointer; font-weight: 750; }
+    details > div { padding: 0 15px 15px; }
+    .evidence-ladder { display: grid; grid-template-columns: 96px 1fr; border: 1px solid var(--line); background: #fff; }
+    .grade { display: grid; place-items: center; color: #fff; background: var(--red); font-family: Georgia, serif; font-size: 42px; font-weight: 700; }
+    .grade-copy { padding: 15px 17px; }
+
+    .share-box { padding: 20px; border: 1px solid var(--amber); background: #fff8e9; font-family: "Iowan Old Style", "Songti SC", serif; font-size: 18px; line-height: 1.75; }
+    .fine { color: var(--muted); font-size: 12px; word-break: break-word; }
+    .source-status { margin: 15px 0; padding: 14px 16px; border: 1px dashed var(--amber); background: #fffbf2; }
+    .can { border-top: 4px solid var(--green); background: var(--green-soft); }
+    .cannot { border-top: 4px solid var(--red); background: var(--red-soft); }
+    .footer-sign { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); text-align: right; font-size: 12px; }
+
+    @media (max-width: 920px) {
+      .page-shell { grid-template-columns: 1fr; }
+      .toc { position: static; display: flex; flex-wrap: wrap; gap: 0 14px; }
+      .toc-title, .toc-note { width: 100%; }
+      .toc a { border-bottom: 0; }
+      .mechanism-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .mechanism-step:nth-child(2)::after { display: none; }
+    }
+    @media (max-width: 800px) {
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .pico-grid, .two-col, .boundary-grid, .bias-grid { grid-template-columns: 1fr; }
+      section { padding: 22px 18px 24px; }
+      .hero-inner, .page-shell { width: min(var(--max), calc(100% - 24px)); }
+    }
+    @media (max-width: 520px) {
+      .issue-line { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .metrics, .mechanism-flow { grid-template-columns: 1fr; }
+      .mechanism-step::after { display: none; }
+      .actions button { width: 100%; }
+      .evidence-ladder { grid-template-columns: 72px 1fr; }
+    }
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      body { color: #000; background: #fff; font-size: 10.5pt; }
+      .hero { color: #000; background: #fff; border-bottom: 2px solid #000; }
+      .hero-inner { width: 100%; padding: 0 0 12px; }
+      .issue-line, .english-title, .byline { color: #000; }
+      .actions, .toc { display: none !important; }
+      .page-shell { display: block; width: 100%; margin: 12px 0; }
+      section { break-inside: auto; box-shadow: none; border: 1px solid #bbb; border-top: 2px solid #000; }
+      .metric, .mini-card, .pico-item, details, .mechanism-step { break-inside: avoid; }
+      a { color: #000; text-decoration: none; }
+      details > div { display: block !important; }
+      .footer-sign { position: running(footer); }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="issue-line"><span>Airway Safety Brief · 同行深读</span><span>2026-07-17</span></div>
+      <h1>机器人右下肺叶切除后<br>缺血性支气管炎进展为 BPF</h1>
+      <p class="english-title">Postoperative Ischemic Bronchitis Progressing to Bronchopleural Fistula After Robotic Lobectomy: A First Report</p>
+      <p class="byline">Jereisat RA, Ibrahim N, Alnas M · <em>Respirology Case Reports</em> 2026;14(7):e70682 · DOI 10.1002/rcr2.70682</p>
+      <div class="badges">
+        <span class="badge alert">证据等级 D · 单病例</span>
+        <span class="badge">RATS 右下肺叶切除</span>
+        <span class="badge">POIB → BPF</span>
+        <span class="badge">摘要级核验</span>
+        <span class="badge">CC BY-NC-ND 4.0</span>
+      </div>
+      <div class="actions">
+        <button type="button" data-copy>复制同行摘要</button>
+        <button type="button" data-toggle>展开全部细节</button>
+        <button type="button" data-print>打印 / 另存 PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <aside class="toc" aria-label="文章目录">
+      <p class="toc-title">阅读导航</p>
+      <a href="#summary">30 秒结论</a>
+      <a href="#numbers">关键数字</a>
+      <a href="#pico">病例框架</a>
+      <a href="#timeline">时间线重建</a>
+      <a href="#mechanism">机制与血供</a>
+      <a href="#comparison">既往证据对照</a>
+      <a href="#diagnosis">鉴别与警示</a>
+      <a href="#methods">证据质量</a>
+      <a href="#bias">偏倚与披露</a>
+      <a href="#practice">同行可采取什么</a>
+      <a href="#boundaries">结论边界</a>
+      <a href="#share">转发摘要</a>
+      <a href="#references">来源与许可</a>
+      <p class="toc-note">本页是安全信号解读，不是诊疗路径或平台优劣比较。</p>
+    </aside>
+
+    <main>
+      <section id="summary" class="alert-section">
+        <p class="eyebrow">Clinical bottom line</p>
+        <h2>30 秒结论</h2>
+        <p class="lead">一名 51 岁男性因 IB 期肺腺癌接受机器人右下肺叶切除及系统性淋巴结清扫，术后 3 周出现呼吸困难和咯血；支气管镜见右主支气管 2.5 × 4 cm 全层坏死、4–5 级缺血改变，已进展为支气管胸膜瘘并需手术修复。</p>
+        <div class="callout danger"><strong>真正的安全信号：</strong>术后早期症状可以很少，气道缺血可能先于瘘形成；右下肺叶切除后出现新发咯血、呼吸困难、发热、持续漏气或胸腔感染，应把支气管残端/主支气管缺血坏死纳入紧急鉴别，并尽早由胸外科、介入呼吸与影像团队共同评估。</div>
+        <div class="callout"><strong>不能越过的边界：</strong>这是 1 个病例，没有机器人手术分母、比较组或平台内对照。它证明“RATS 后也可能发生 POIB/BPF”，不证明“RATS 增加 BPF 风险”，更不能据此改变平台选择。</div>
+        <div class="status-note"><strong>解读状态</strong><span><strong>摘要级核验，不是全文解读。</strong>已核对出版社 DOI 登记、Crossref 正式摘要与引用文献。正式版本为金色开放获取，但截至 2026-07-17，出版社自动访问防护阻止直接取得 PDF，PMC/Europe PMC 尚未收录，因此手术细节、修复术式、随访时长及披露声明未从全文核实。所有摘要外内容均标为“机制推断”或“既往证据”。</span></div>
+      </section>
+
+      <section id="numbers">
+        <p class="eyebrow">Signal at a glance</p>
+        <h2>关键数字</h2>
+        <div class="metrics">
+          <div class="metric danger"><div class="label">证据单位</div><div class="value">n = 1</div><div class="caption">病例报告；无发生率分母、无比较组</div></div>
+          <div class="metric"><div class="label">患者</div><div class="value">51 岁</div><div class="caption">男性，IB 期肺腺癌</div></div>
+          <div class="metric caution"><div class="label">症状出现</div><div class="value">术后 3 周</div><div class="caption">呼吸困难 + 咯血</div></div>
+          <div class="metric danger"><div class="label">坏死范围</div><div class="value">2.5 × 4 cm</div><div class="caption">右主支气管全层缺损</div></div>
+          <div class="metric danger"><div class="label">缺血分级</div><div class="value">4–5 级</div><div class="caption">原文摘要用语；对应重度/坏死性改变</div></div>
+          <div class="metric"><div class="label">结局</div><div class="value">手术修复</div><div class="caption">复查支气管镜示完全愈合；具体术式与时间未见于摘要</div></div>
+        </div>
+      </section>
+
+      <section id="pico">
+        <p class="eyebrow">Case question</p>
+        <h2>病例框架：不是疗效研究</h2>
+        <div class="pico-grid">
+          <div class="pico-item"><span class="pico-letter">P</span><strong>患者</strong><p>51 岁男性，IB 期肺腺癌。吸烟、糖尿病、肺功能、营养、炎症指标、术前治疗等高风险信息未见于摘要。</p></div>
+          <div class="pico-item"><span class="pico-letter">I</span><strong>暴露</strong><p>机器人辅助右下肺叶切除 + 系统性淋巴结清扫。清扫站数、支气管周围剥离范围、能量器械与残端处理未见于摘要。</p></div>
+          <div class="pico-item"><span class="pico-letter">C</span><strong>比较</strong><p>没有开胸、VATS、其他 RATS 病例或院内基线发生率作为对照。</p></div>
+          <div class="pico-item"><span class="pico-letter">O</span><strong>事件</strong><p>POIB 进展为右主支气管全层坏死和 BPF，需手术修复；复查镜下完全愈合。</p></div>
+        </div>
+      </section>
+
+      <section id="timeline">
+        <p class="eyebrow">Reconstructed chronology</p>
+        <h2>病例时间线重建</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">手术日 · 已报告</div>
+            <strong>机器人辅助右下肺叶切除 + 系统性淋巴结清扫</strong>
+            <p>适应证为 IB 期肺腺癌。支气管残端覆盖、清扫站位、术中灌注观察和困难程度未见于摘要。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">术后第 1–20 天 · 未报告</div>
+            <strong>潜在“静默窗口”</strong>
+            <p>摘要未交代出院过程、胸管、漏气、发热、影像或早期支气管镜。既往队列显示 POIB 常在术后约 1–2 周出现且可无症状，但不能假定本例当时已有镜下病变。</p>
+          </div>
+          <div class="timeline-item alert">
+            <div class="timeline-date">术后约第 21 天 · 已报告</div>
+            <strong>呼吸困难与咯血</strong>
+            <p>这是需要紧急排除气道坏死/BPF、肺动脉出血源、肺栓塞与感染的红旗组合。</p>
+          </div>
+          <div class="timeline-item alert">
+            <div class="timeline-date">诊断支气管镜 · 已报告</div>
+            <strong>右主支气管 2.5 × 4 cm 全层坏死，4–5 级缺血改变</strong>
+            <p>病变描述超出单纯残端表浅黏膜改变，提示广泛、深层气道壁受累；但分级体系、图像和瘘口解剖需全文确认。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">救援治疗 · 部分报告</div>
+            <strong>接受手术修复</strong>
+            <p class="uncertain">具体手术名称、是否清创/再吻合/肌瓣或网膜覆盖、胸腔感染控制、抗菌治疗均未见于摘要，不作猜测。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">随访 · 部分报告</div>
+            <strong>复查支气管镜确认完全愈合</strong>
+            <p class="uncertain">复查时间、影像、功能结局与长期随访未见于摘要。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="mechanism">
+        <p class="eyebrow">Anatomy to complication</p>
+        <h2>可能机制：支气管血供为何与淋巴结清扫相关</h2>
+        <div class="mechanism-flow" aria-label="缺血至支气管胸膜瘘的机制链">
+          <div class="mechanism-step"><span class="step-no">01</span><strong>血供易损</strong><p>主支气管与残端主要依赖体循环支气管动脉及支气管周围微血管网。</p></div>
+          <div class="mechanism-step"><span class="step-no">02</span><strong>周围血管受扰</strong><p>系统性清扫、尤其隆突下区域的环周剥离，可能切断细小支气管动脉分支和周围组织血供。</p></div>
+          <div class="mechanism-step"><span class="step-no">03</span><strong>缺血坏死</strong><p>黏膜苍白/溃疡可进展为部分或全层坏死；感染、张力与分泌物潴留可能进一步恶化愈合。</p></div>
+          <div class="mechanism-step"><span class="step-no">04</span><strong>壁破坏与瘘</strong><p>气道壁失活、裂开并与胸膜腔相通，形成 BPF，继发漏气、污染与脓胸风险。</p></div>
+        </div>
+        <div class="two-col">
+          <div class="mini-card neutral">
+            <h3>解剖与实验支持</h3>
+            <ul>
+              <li>尸体解剖显示支气管动脉之间通过气管固有鞘血管网相连，保留支气管动脉和周围鞘有利于维持血供。</li>
+              <li>猪右下肺叶切除模型中，支气管动脉结扎位置越高，支气管残端组织氧饱和度下降越明显；保留至少一支至中叶支气管水平的支气管动脉可减轻下降。</li>
+              <li>这些是机制支持，不能精确还原本例发生了哪一支血管损伤。</li>
+            </ul>
+          </div>
+          <div class="mini-card warn">
+            <h3>机器人平台扮演什么角色？</h3>
+            <ul>
+              <li>随机 RVlob 试验中 RATS 的淋巴结数和清扫站数略高于 VATS；16 中心观察研究也报告 RATS 更常达到 ≥5 站清扫。</li>
+              <li>这只能支持“机器人可能促进更充分清扫”的群体层面现象，不能证明更充分清扫必然造成缺血，也不能把本例归因于机器人。</li>
+              <li>关键暴露更可能是<strong>支气管周围剥离范围、能量热扩散、血管保留、患者基础风险与感染</strong>的组合，而不是机械臂本身。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout"><strong>关于隆突下清扫：</strong>既往观察研究把 subcarinal LND 与 POIB 相关联；本例只报告“系统性淋巴结清扫”，未列出站位。因此“隆突下清扫参与本例机制”属于合理但未证实的推断。</div>
+      </section>
+
+      <section id="comparison">
+        <p class="eyebrow">Context, not equivalence</p>
+        <h2>与既往证据对照</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>研究</th><th>设计与人群</th><th>关键结果</th><th>如何解读本病例</th></tr></thead>
+            <tbody>
+              <tr><td>Satoh 2006</td><td>肺癌根治切除 <span class="num">1,015</span> 例，术后 15 天内镜资料回顾</td><td>POIB <span class="num">29/1,015（2.5%）</span>；其中 <span class="num">3/29（10%）</span> 进展 BPF。男性、吸烟、糖尿病、术后呼吸并发症与隆突下清扫相关。</td><td>说明 POIB→BPF 的病理链并非机器人时代新现象；旧年代观察数据不等于当代发生率。</td></tr>
+              <tr><td>Benhamed 2011</td><td>系统性清扫后 <span class="num">1,071</span> 例，术后 7–12 天常规支气管镜</td><td>POIB <span class="num">34 例（3.21%）</span>，平均术后 <span class="num">8 ± 3 天</span>；<span class="num">80%</span> 无症状，<span class="num">6/34</span> 恶化需手术救援。</td><td>支持“症状少、镜下病变可更早”的警示，但没有证明普筛改善结局。</td></tr>
+              <tr><td>Ichinose 2023</td><td>无支气管成形/术前治疗的肺叶切除 <span class="num">3,180</span> 例</td><td>BPF <span class="num">14 例（0.44%）</span>；中位发生 <span class="num">21 天</span>，14 例均为男性且均接受右下肺叶切除；2 例死亡。</td><td>本病例“男性 + 右下肺叶 + 约 21 天”与已知高风险表型吻合，不能简单视为平台特异事件。</td></tr>
+              <tr><td>Endoh 2018</td><td>POIB 高压氧治疗病例系列 <span class="num">n=7</span></td><td>5 例缓解，2 例恶化需手术；无对照。</td><td>高压氧仅是低确定性辅助策略信号，不能据此常规推荐或延误外科源控制。</td></tr>
+              <tr><td>Jereisat 2026</td><td>首个公开报告的 RATS 后 POIB→BPF，<span class="num">n=1</span></td><td>右主支气管全层坏死，需手术修复，最终镜下愈合。</td><td>扩展“可发生的场景”，不提供发生率，也不回答 RATS 与 VATS/开胸的相对风险。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine">注意：不同研究对 POIB/BPF 的诊断、支气管镜时点、手术年代与患者选择不同，比例不能直接横向比较。</p>
+      </section>
+
+      <section id="diagnosis" class="alert-section">
+        <p class="eyebrow">Do not miss</p>
+        <h2>术后 3 周“呼吸困难 + 咯血”的鉴别与警示</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>必须考虑</th><th>支持线索</th><th>关键检查/行动</th><th>易犯错误</th></tr></thead>
+            <tbody>
+              <tr><td><strong>POIB / 气道坏死 / BPF</strong></td><td>新发漏气、皮下气肿、咳嗽、呼吸困难、咯血、发热、胸腔感染；早期也可无症状</td><td>胸部增强 CT；尽早支气管镜直接评估黏膜、残端和瘘口；胸外科同步介入</td><td>仅因胸片或炎症指标不重而排除</td></tr>
+              <tr><td><strong>肺动脉残端/分支假性动脉瘤或活动性出血</strong></td><td>咯血量增加、血红蛋白下降、循环不稳</td><td>按大咯血路径保护气道与健侧肺；急诊 CTA/介入与外科会诊</td><td>把所有咯血都解释为支气管黏膜缺血</td></tr>
+              <tr><td><strong>肺栓塞 / 肺梗死</strong></td><td>突发气促、低氧、心动过速、胸痛，可伴少量咯血</td><td>结合概率评估行 CTPA；同时排查出血禁忌</td><td>未排除出血源即经验性抗凝</td></tr>
+              <tr><td><strong>肺炎、吸入、脓胸</strong></td><td>发热、脓痰、白细胞升高、积液/气液平</td><td>影像、培养、胸腔引流通畅性与抗感染；寻找是否由 BPF 驱动</td><td>只治疗感染而漏掉持续污染源</td></tr>
+              <tr><td><strong>黏液栓 / 肺不张</strong></td><td>肺复张不良、分泌物潴留、低氧</td><td>影像与支气管镜吸引，同时观察气道壁</td><td>吸痰后症状缓解便停止寻找坏死</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout danger"><strong>紧急程度：</strong>活动性或大量咯血、循环不稳、进行性低氧、疑张力性气胸/严重漏气或脓毒症，均应立即进入急救与胸外科救援流程；本页面不替代本院大咯血、BPF 和脓胸处置规范。</div>
+      </section>
+
+      <section id="methods">
+        <p class="eyebrow">Evidence appraisal</p>
+        <h2>证据质量：D 级安全信号</h2>
+        <div class="evidence-ladder">
+          <div class="grade">D</div>
+          <div class="grade-copy"><strong>病例报告 / hypothesis-generating</strong><p>适合识别罕见事件、建立时间线和提出机制；不适合估计风险、比较手术平台、筛选独立危险因素或验证干预。</p></div>
+        </div>
+        <div class="two-col" style="margin-top:13px">
+          <div class="mini-card good">
+            <h3>这篇文章贡献了什么</h3>
+            <ul>
+              <li>把 POIB→BPF 的已知病理链扩展到机器人肺叶切除场景。</li>
+              <li>提供了明确的症状时点、镜下坏死范围和最终修复结局。</li>
+              <li>提醒呼吸介入与胸外科关注气道缺血，而不仅是常见肺部并发症。</li>
+            </ul>
+          </div>
+          <div class="mini-card bad">
+            <h3>它回答不了什么</h3>
+            <ul>
+              <li>RATS 后 POIB/BPF 的真实发生率。</li>
+              <li>RATS 相比 VATS 或开胸是否增加风险。</li>
+              <li>系统支气管镜筛查是否减少 BPF 或死亡。</li>
+              <li>哪种修复或高压氧方案更有效。</li>
+            </ul>
+          </div>
+        </div>
+        <details open><summary>为什么“first report”不是更高等级证据？</summary><div>“首次报告”描述检索新颖性，不代表因果强度。罕见事件更容易被发表，未发生事件的数百或数千例通常不会逐例报道，因此无法从发表数量推断平台风险。</div></details>
+        <details><summary>为什么不能从“机器人清扫更多淋巴结”直接推到“机器人导致缺血”？</summary><div>清扫数量是平台、术者、病例选择、中心路径和病理处理共同作用的结果。即使群体平均清扫更多，也不等于每例都有更广泛的支气管周围剥离；更没有显示 BPF 随平台上升。需要带分母的多中心队列、标准化事件定义和对关键混杂因素的调整。</div></details>
+        <details><summary>术后 7–12 天常规支气管镜是否应成为标准？</summary><div>作者基于旧队列中 80% POIB 无症状而建议高风险患者考虑筛查。这是合理的安全策略假说，但尚缺随机或前瞻对照证明普遍筛查改善患者重要结局。更稳妥的做法是由中心根据右下肺叶切除、复杂清扫、术前放疗、感染/营养风险和术中血供担忧制定选择性路径并审计收益与伤害。</div></details>
+      </section>
+
+      <section id="bias">
+        <p class="eyebrow">Transparency audit</p>
+        <h2>偏倚、缺失信息与利益冲突</h2>
+        <div class="bias-grid">
+          <div class="mini-card bad">
+            <h3>主要偏倚</h3>
+            <ul>
+              <li><strong>选择/发表偏倚：</strong>严重、罕见、首例更容易发表。</li>
+              <li><strong>归因偏倚：</strong>标题突出机器人，但没有证据拆分平台、清扫技术和患者因素。</li>
+              <li><strong>无分母：</strong>无法知道同一中心同期多少 RATS 未发生 POIB/BPF。</li>
+              <li><strong>报告完整性：</strong>目前仅能核对摘要，不能评估 CARE 清单完成度。</li>
+            </ul>
+          </div>
+          <div class="mini-card warn">
+            <h3>全文待核信息</h3>
+            <ul>
+              <li>吸烟、糖尿病、COPD、营养、激素、术前放化疗与感染。</li>
+              <li>清扫站位、支气管动脉/周围组织保留、残端长度与覆盖。</li>
+              <li>CT 与镜下图像、培养、修复术式、随访时点。</li>
+              <li>患者知情同意、研究伦理、资金和作者利益冲突。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="source-status"><strong>披露状态：</strong>Crossref 正式登记未提供资金、利益冲突或病例发表同意内容；在未取得全文声明段前，不能写成“无资助”“无冲突”或“已获同意”。本页一律标记为<strong>未核实</strong>。</div>
+      </section>
+
+      <section id="practice">
+        <p class="eyebrow">Actionable, proportionate</p>
+        <h2>胸外科同行可以采取什么</h2>
+        <div class="two-col">
+          <div class="mini-card good">
+            <h3>围术期可落地的审视点</h3>
+            <ul>
+              <li>术前识别男性、重度吸烟、糖尿病、低白蛋白、阻塞性通气障碍、间质性肺病、术前放疗/感染等愈合风险。</li>
+              <li>右下肺叶切除与隆突下清扫时，重视支气管周围组织及可辨认血供的保护，避免无必要的环周骨骼化与热损伤。</li>
+              <li>高风险残端是否覆盖，应结合本院证据、术中血供与感染风险个体化决定，不能由本病例单独支持。</li>
+              <li>出院教育加入新发咯血、呼吸困难、发热、胸痛、皮下气肿及引流异常的即时返院触发条件。</li>
+            </ul>
+          </div>
+          <div class="mini-card neutral">
+            <h3>建立动态质量监测</h3>
+            <ul>
+              <li>把 POIB、BPF、残端坏死纳入 30/90 天并发症登记，按切除肺叶、入路、清扫站数、术前治疗和术者经验分层。</li>
+              <li>记录支气管镜时点、内镜分级、是否无症状、修复与结局，形成院内分母。</li>
+              <li>若实施选择性术后 7–12 天支气管镜，应同步记录发现率、干预改变、并发症与资源负担。</li>
+              <li>只有连续数据才能判断这是孤立事件、技术学习信号，还是可重复的风险模式。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout"><strong>平台决策：</strong>不建议因为单个病例减少或停止 RATS。更合理的回应是复盘清扫边界、支气管血供保护、能量使用、残端处理、随访触发和救援路径，并等待有分母的比较研究。</div>
+      </section>
+
+      <section id="boundaries">
+        <p class="eyebrow">Claim discipline</p>
+        <h2>结论边界</h2>
+        <div class="boundary-grid">
+          <div class="mini-card can">
+            <h3>可以说</h3>
+            <ul>
+              <li>RATS 右下肺叶切除后也可能发生 POIB 并进展为 BPF。</li>
+              <li>本例在术后约 3 周以呼吸困难和咯血表现，镜下为右主支气管广泛全层坏死。</li>
+              <li>既往研究支持支气管血供损伤与系统性/隆突下清扫之间存在生物学和观察性关联。</li>
+              <li>对高风险患者保持低阈值支气管镜评估是合理警示。</li>
+            </ul>
+          </div>
+          <div class="mini-card cannot">
+            <h3>不能说</h3>
+            <ul>
+              <li>不能推断 RATS 增加 POIB 或 BPF 风险。</li>
+              <li>不能证明“清扫更彻底”导致了本例坏死。</li>
+              <li>不能把术后 7–12 天常规支气管镜称为普遍指南标准。</li>
+              <li>不能用 1 例成功修复评价某种手术或高压氧疗效。</li>
+              <li>不能在未取得全文前声称作者无利益冲突或获得知情同意。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="share">
+        <p class="eyebrow">Ready to forward</p>
+        <h2>同行转发摘要</h2>
+        <div class="share-box share-text">Jereisat 等于 2026 年报告首例机器人肺叶切除后缺血性支气管炎进展为支气管胸膜瘘：51 岁男性因 IB 期肺腺癌接受 RATS 右下肺叶切除及系统性淋巴结清扫，术后 3 周出现呼吸困难和咯血；支气管镜见右主支气管 2.5 × 4 cm 全层坏死、4–5 级缺血改变，需手术修复，复查镜下完全愈合。该病例提示右下肺叶切除后应警惕气道缺血的“静默期”，新发咯血、气促、持续漏气或胸腔感染应尽早行增强 CT/CTA 和支气管镜评估。既往队列显示 POIB 多在术后 1–2 周出现且 80% 可无症状，但该文仅为单病例、无分母和对照，只能说明 RATS 后“可能发生”，不能推断机器人增加 BPF 风险，也不能把术后常规支气管镜视为已验证标准。</div>
+      </section>
+
+      <section id="references">
+        <p class="eyebrow">Primary sources</p>
+        <h2>来源、全文状态与许可</h2>
+        <ol>
+          <li>Jereisat RA, Ibrahim N, Alnas M. <em>Postoperative Ischemic Bronchitis Progressing to Bronchopleural Fistula After Robotic Lobectomy: A First Report.</em> Respirology Case Reports. 2026;14(7):e70682. <a href="https://doi.org/10.1002/rcr2.70682">出版社 DOI</a> · <a href="https://api.crossref.org/works/10.1002/rcr2.70682">Crossref 登记</a></li>
+          <li>Benhamed L, et al. Postoperative ischemic bronchitis after lymph node dissection and primary lung cancer resection. <em>Ann Thorac Surg.</em> 2011;91:355-359. <a href="https://pubmed.ncbi.nlm.nih.gov/21256268/">PubMed</a></li>
+          <li>Satoh Y, et al. Postoperative ischemic change in bronchial stumps after primary lung cancer resection. <em>Eur J Cardiothorac Surg.</em> 2006;30:172-176. <a href="https://pubmed.ncbi.nlm.nih.gov/16730184/">PubMed</a></li>
+          <li>Ichinose J, et al. Risk factors for bronchopleural fistula after lobectomy for lung cancer. <em>J Thorac Dis.</em> 2023;15:3330-3339. <a href="https://pubmed.ncbi.nlm.nih.gov/37426169/">PubMed</a> · <a href="https://jtd.amegroups.org/article/view/77493/html">开放全文</a></li>
+          <li>Jin R, et al. Robotic-assisted versus video-assisted thoracoscopic lobectomy: short-term results of the RVlob randomized trial. <em>Ann Surg.</em> 2022;275:295-302. <a href="https://pubmed.ncbi.nlm.nih.gov/33938492/">PubMed</a></li>
+          <li>Kalata S, et al. The role of lung cancer surgical technique on lymph node sampling and pathologic nodal upstaging. <em>Ann Thorac Surg.</em> 2023;115:1238-1245. <a href="https://pubmed.ncbi.nlm.nih.gov/36240869/">PubMed</a></li>
+          <li>Yamamoto M, et al. Surgical ligation level of the bronchial artery influences tissue oxygen saturation of the bronchus and the incidence of postoperative bronchofistula after pulmonary lobectomy. <em>Quant Imaging Med Surg.</em> 2021;11:3157-3164. <a href="https://pubmed.ncbi.nlm.nih.gov/34249642/">PubMed</a></li>
+          <li>Endoh M, et al. Hyperbaric oxygen therapy for postoperative ischemic bronchitis after resection of lung cancer. <em>J Thorac Dis.</em> 2018;10:6176-6183. <a href="https://pubmed.ncbi.nlm.nih.gov/30622789/">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6297444/">开放全文</a></li>
+        </ol>
+        <div class="source-status"><strong>正式版本状态：</strong>Crossref 显示在线发表 2026-07-15，收稿 2026-06-09，接受 2026-07-06；版本许可为 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>。截至核对时，合法 OA PDF 地址虽已登记，但出版社页面对自动访问返回防护页，且开放仓储尚无副本，故未保存本地 PDF。本解读未复制原文图表或长段文字。</div>
+        <p class="fine">检索与核对截止：2026-07-17（Asia/Shanghai）。本页用于胸外科学术交流和质量改进，不替代患者个体化诊疗、急救规范或本院多学科决策。</p>
+        <div class="footer-sign">潍坊市人民 胸外科医学中心 王江整理</div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    async function copySummary() {
+      const text = document.querySelector('.share-text').innerText.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (error) {
+        const fallback = document.createElement('textarea');
+        fallback.value = text;
+        fallback.style.position = 'fixed';
+        fallback.style.opacity = '0';
+        document.body.appendChild(fallback);
+        fallback.select();
+        document.execCommand('copy');
+        fallback.remove();
+      }
+      const button = document.querySelector('[data-copy]');
+      button.textContent = '已复制';
+      setTimeout(() => { button.textContent = '复制同行摘要'; }, 1500);
+    }
+
+    function toggleDetails() {
+      const details = [...document.querySelectorAll('details')];
+      const shouldOpen = details.some(item => !item.open);
+      details.forEach(item => { item.open = shouldOpen; });
+      document.querySelector('[data-toggle]').textContent = shouldOpen ? '收起全部细节' : '展开全部细节';
+    }
+
+    document.querySelector('[data-copy]').addEventListener('click', copySummary);
+    document.querySelector('[data-toggle]').addEventListener('click', toggleDetails);
+    document.querySelector('[data-print]').addEventListener('click', () => window.print());
+  </script>
+</body>
+</html>
