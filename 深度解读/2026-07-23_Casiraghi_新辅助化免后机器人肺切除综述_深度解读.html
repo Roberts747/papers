@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Casiraghi 等 2026 年 Cancers 叙述性综述深度解读：新辅助化免后机器人肺切除的可行性、技术挑战、证据边界与临床适用性。">
+  <title>Casiraghi 2026｜新辅助化免后机器人肺切除综述｜深度解读</title>
+  <style>
+    :root{--navy:#102a43;--navy2:#183b56;--teal:#087f8c;--teal2:#0b6e75;--gold:#d99a24;--ink:#243b53;--muted:#5f7185;--paper:#fff;--wash:#f3f7f9;--line:#d8e2e8;--red:#a43d3d;--green:#2f7d5a;--shadow:0 12px 34px rgba(16,42,67,.09)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:linear-gradient(180deg,#eaf3f5 0,#f7f9fa 360px,#eef3f5 100%);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;line-height:1.72}
+    a{color:var(--teal2);text-underline-offset:3px}
+    a:hover{color:var(--navy)}
+    button{font:inherit}
+    .shell{width:min(1120px,calc(100% - 32px));margin:auto}
+    .hero{position:relative;overflow:hidden;padding:54px 0 42px;color:#fff;background:linear-gradient(125deg,var(--navy) 0%,#16485a 64%,var(--teal) 100%)}
+    .hero:after{content:"";position:absolute;width:420px;height:420px;right:-150px;top:-220px;border:70px solid rgba(255,255,255,.06);border-radius:50%}
+    .hero .shell{position:relative;z-index:1}
+    .kicker{margin:0 0 12px;color:#bcebf0;font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    h1{max-width:930px;margin:0;font-size:clamp(2rem,5vw,3.6rem);line-height:1.14;letter-spacing:-.035em}
+    .subtitle{max-width:900px;margin:18px 0 0;color:#d8eef0;font-size:1.03rem}
+    .byline{max-width:960px;margin:15px 0 0;color:#c9dce5;font-size:.92rem}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}
+    .badge{display:inline-flex;align-items:center;min-height:30px;padding:4px 10px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.09);font-size:.79rem;font-weight:750}
+    .badge.gold{border-color:#f2c96f;background:#f2c96f;color:#51370a}
+    .badge.red{border-color:#f3c5c5;background:#f9dddd;color:#762b2b}
+    .actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:7px 13px;border:1px solid rgba(255,255,255,.34);border-radius:8px;color:#fff;background:rgba(255,255,255,.08);cursor:pointer;text-decoration:none;font-weight:720}
+    .btn:hover{background:rgba(255,255,255,.17);color:#fff}
+    .btn.primary{border-color:#fff;background:#fff;color:var(--navy)}
+    .btn.primary:hover{background:#dff3f5}
+    .notice{padding:14px 0;background:#fff7df;border-bottom:1px solid #ecd9a0;color:#5e4b18;font-size:.91rem}
+    .notice strong{color:#44350e}
+    .layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:26px;align-items:start;padding:30px 0 56px}
+    .toc{position:sticky;top:16px;padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.92);box-shadow:var(--shadow)}
+    .toc strong{display:block;margin-bottom:9px;color:var(--navy);font-size:.85rem;letter-spacing:.08em}
+    .toc a{display:block;padding:5px 7px;border-radius:6px;color:var(--muted);font-size:.87rem;text-decoration:none}
+    .toc a:hover{color:var(--teal2);background:#ecf7f8}
+    main{min-width:0}
+    section{scroll-margin-top:18px;margin-bottom:22px;padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--paper);box-shadow:var(--shadow)}
+    section h2{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--navy);font-size:1.36rem;line-height:1.35}
+    section h2:before{content:"";width:5px;height:25px;border-radius:9px;background:linear-gradient(var(--gold),var(--teal))}
+    h3{margin:22px 0 8px;color:var(--navy2);font-size:1.06rem}
+    p{margin:9px 0}
+    .lead{font-size:1.08rem}
+    .callout{margin:14px 0;padding:15px 17px;border-left:4px solid var(--teal);border-radius:0 9px 9px 0;background:#edf8f8}
+    .callout.warn{border-color:var(--gold);background:#fff8e7}
+    .callout.danger{border-color:var(--red);background:#fff1f1}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .metric{min-height:130px;padding:16px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,#fff,#f3f8f9)}
+    .metric .n{display:block;color:var(--teal2);font-size:1.72rem;font-weight:850;line-height:1.15}
+    .metric .label{display:block;margin-top:7px;color:var(--navy);font-weight:780}
+    .metric small{display:block;margin-top:5px;color:var(--muted);line-height:1.45}
+    .grid2,.grid3{display:grid;gap:13px}
+    .grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{padding:17px;border:1px solid var(--line);border-radius:12px;background:#fbfdfd}
+    .card h3{margin:0 0 7px}
+    .card p:first-child{margin-top:0}
+    .card p:last-child{margin-bottom:0}
+    .tag{display:inline-block;margin:0 5px 5px 0;padding:2px 8px;border-radius:999px;background:#e4f3f4;color:var(--teal2);font-size:.76rem;font-weight:760}
+    .tag.gray{background:#edf1f3;color:#526575}
+    .tag.gold{background:#fff0c6;color:#74520b}
+    table{width:100%;border-collapse:collapse;margin:15px 0;font-size:.9rem}
+    th,td{padding:11px 10px;border:1px solid var(--line);vertical-align:top;text-align:left}
+    th{color:var(--navy);background:#edf4f6}
+    tbody tr:nth-child(even){background:#fbfcfd}
+    .table-wrap{overflow-x:auto}
+    .num{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:760}
+    ul{padding-left:1.25rem}
+    li+li{margin-top:6px}
+    details{margin-top:12px;border:1px solid var(--line);border-radius:10px;background:#fbfdfd}
+    summary{padding:12px 14px;color:var(--navy);cursor:pointer;font-weight:780}
+    details>div{padding:0 14px 14px}
+    .boundary{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .yes,.no{padding:18px;border-radius:13px}
+    .yes{border:1px solid #b9decd;background:#f0faf5}
+    .no{border:1px solid #efc9c9;background:#fff4f4}
+    .yes h3{color:var(--green)}
+    .no h3{color:var(--red)}
+    .yes h3,.no h3{margin-top:0}
+    .quote{padding:18px;border:1px dashed #a9c5cc;border-radius:12px;background:#f7fbfc;white-space:pre-line}
+    .sourcebox{padding:16px;border:1px solid var(--line);border-radius:12px;background:#f7fafb;overflow-wrap:anywhere}
+    .muted{color:var(--muted)}
+    .small{font-size:.85rem}
+    .print-only{display:none}
+    footer{padding:0 0 44px;color:var(--muted);font-size:.84rem;text-align:center}
+    #toast{position:fixed;right:18px;bottom:18px;z-index:10;max-width:min(360px,calc(100% - 36px));padding:11px 14px;border-radius:9px;color:#fff;background:var(--navy);box-shadow:var(--shadow);opacity:0;transform:translateY(10px);pointer-events:none;transition:.2s}
+    #toast.show{opacity:1;transform:none}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}.toc{position:static;display:grid;grid-template-columns:repeat(3,1fr);gap:3px}.toc strong{grid-column:1/-1}.metrics{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.shell{width:min(100% - 20px,1120px)}.hero{padding:38px 0 32px}.layout{padding-top:18px}.toc{grid-template-columns:repeat(2,1fr)}section{padding:21px 16px}.grid2,.grid3,.boundary,.metrics{grid-template-columns:1fr}.metric{min-height:0}th,td{padding:9px 8px}.actions{display:grid;grid-template-columns:1fr 1fr}}
+    @media print{body{background:#fff;font-size:10.5pt}.hero{padding:25px 0;color:#111;background:#fff;border-bottom:2px solid var(--navy)}.hero h1,.hero .kicker,.hero .subtitle,.hero .byline{color:#111}.hero:after,.actions,.toc,#toast{display:none!important}.badge{color:#111;border-color:#888;background:#fff}.layout{display:block;padding:18px 0}.shell{width:100%}section{break-inside:avoid;box-shadow:none;border-color:#aaa;padding:18px;margin-bottom:12px}.print-only{display:block}.notice{border:1px solid #bca85f}.sourcebox{background:#fff}a{color:#111;text-decoration:none}footer{padding-bottom:0}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="shell">
+      <p class="kicker">Thoracic Evidence Note · 真正新增 · 2026-07-23</p>
+      <h1>新辅助化免后 RATS：经验中心可行，低阈值中转是安全策略</h1>
+      <p class="subtitle">Robotic Thoracic Surgery After Neoadjuvant Chemo-Immunotherapy for NSCLC: A Narrative Review</p>
+      <p class="byline">Monica Casiraghi, Antonio Mazzella, Lara Girelli, Giorgio Lo Iacono, Luca Bertolaccini, Matteo Chiari, Giovanni Caffarena, Claudia Bardoni, Lorenzo Spaggiari · <em>Cancers</em> 2026;18:2365 · 首次公开 2026-07-22 · DOI: 10.3390/cancers18142365</p>
+      <div class="badges" aria-label="文章标签">
+        <span class="badge gold">全文解读</span>
+        <span class="badge">叙述性综述</span>
+        <span class="badge">表 2：12 项选择性研究</span>
+        <span class="badge">无新增患者 / 无汇总效应</span>
+        <span class="badge red">证据等级 C*</span>
+        <span class="badge">CC BY 4.0</span>
+        <span class="badge">暂无 PMID / PMCID</span>
+      </div>
+      <div class="actions">
+        <span class="public-pdf-note">原文 PDF（公开版不镜像，请通过 DOI、PubMed 或期刊链接访问）</span>
+        <a class="btn" href="https://doi.org/10.3390/cancers18142365">DOI / 官方页面</a>
+        <button class="btn" type="button" data-copy="#shareText">复制转发摘要</button>
+        <button class="btn" type="button" data-toggle>展开全部细节</button>
+        <button class="btn" type="button" data-print>打印 / 存为 PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="notice">
+    <div class="shell"><strong>阅读边界：</strong>这是一篇叙述性综述，不是系统综述、Meta 分析或比较试验。页面中的队列数字均为作者对既有研究的二级转述，不能当作 Casiraghi 团队的新患者数据，也不能据此证明 RATS 的因果获益。</div>
+  </div>
+
+  <div class="shell layout">
+    <nav class="toc" aria-label="页内目录">
+      <strong>快速导航</strong>
+      <a href="#bottomline">30 秒结论</a>
+      <a href="#numbers">关键数字</a>
+      <a href="#pico">PICO / 问题</a>
+      <a href="#methods">方法</a>
+      <a href="#results">结果</a>
+      <a href="#statistics">统计边界</a>
+      <a href="#bias">偏倚</a>
+      <a href="#applicability">适用性</a>
+      <a href="#position">证据位置</a>
+      <a href="#boundaries">可说 / 不可说</a>
+      <a href="#share">转发摘要</a>
+      <a href="#sources">来源与核对</a>
+    </nav>
+
+    <main>
+      <section id="bottomline">
+        <h2>30 秒结论</h2>
+        <p class="lead"><strong>这篇综述最有价值的不是“证明机器人优于胸腔镜”，而是把新辅助化免后肺切除的技术风险与安全边界讲清楚：</strong>免疫相关纤维化、肺门组织致密化和淋巴结瘢痕可改变正常解剖层次；在有经验的中心、经过选择的病例中，RATS 可以完成切除，但应把“及时、低阈值中转开胸”视为成熟的安全策略，而非技术失败。</p>
+        <div class="callout">
+          <strong>临床可带走：</strong>术式标签不是第一优先级。更重要的是术前判断、团队经验、血管控制预案、肿瘤学切除原则，以及在解剖层次不安全时不犹豫中转。
+        </div>
+        <div class="callout warn">
+          <strong>证据不能越界：</strong>综述没有新增患者、没有预设比较、没有正式 Meta 分析，也没有生存获益的可归因证据。它支持“选择性可行”和“安全策略”，不支持“普遍优先”“因果降低中转”或“改善生存”。
+        </div>
+        <p class="small muted">新颖性标记：论文首次公开日期为 2026-07-22；按“首次公开日期 + DOI”核对后，于 2026-07-23 纳入本助手，分类为<strong>真正新增</strong>。证据等级 C*：叙述性综述 / 专家综合层级，星号表示不是系统综述。</p>
+      </section>
+
+      <section id="numbers">
+        <h2>关键数字</h2>
+        <div class="metrics">
+          <div class="metric"><span class="n">2018–2026.07</span><span class="label">检索时间范围</span><small>PubMed、Embase、Scopus；另手工追溯参考文献。</small></div>
+          <div class="metric"><span class="n">12 项</span><span class="label">表 2 选择性研究</span><small>样本量从 20 到 3937；不是 PRISMA 意义上的完整纳入集。</small></div>
+          <div class="metric"><span class="n">7.5% vs 28.2%</span><span class="label">Zeng，n=220</span><small>RATS vs VATS 中转率；来自综述表格的二级转述。</small></div>
+          <div class="metric"><span class="n">7.9% vs 17.2%</span><span class="label">Pohlman，n=3937</span><small>RATS vs VATS 中转率；VATS 中转 aOR 1.98，均为二级转述。</small></div>
+          <div class="metric"><span class="n">5 项 / 984 例</span><span class="label">Barbosa 既有 Meta</span><small>中转 OR 0.28（95%CI 0.13–0.65）；观察性研究综合。</small></div>
+          <div class="metric"><span class="n">0</span><span class="label">本综述新增患者</span><small>没有个体数据、前瞻性队列或新的汇总效应。</small></div>
+          <div class="metric"><span class="n">15 页</span><span class="label">全文 PDF</span><small>未加密；已核对正文、表格、声明与参考文献。</small></div>
+          <div class="metric"><span class="n">C*</span><span class="label">证据等级</span><small>叙述性综合可用于理解问题，不宜用于确定比较效应。</small></div>
+        </div>
+        <p class="small muted">百分比、比值比和样本量仅用于准确呈现论文所引用的研究。临床引用前应回到原始研究核对定义、纳入人群、调整变量及随访。</p>
+      </section>
+
+      <section id="pico">
+        <h2>PICO / 结构化问题</h2>
+        <div class="grid2">
+          <div class="card"><span class="tag">P</span><h3>人群</h3><p>接受新辅助化疗联合免疫治疗后，拟行根治性肺切除的可切除 NSCLC 患者；综述重点涉及局部进展期和技术上更复杂的病例。</p></div>
+          <div class="card"><span class="tag">I / 暴露</span><h3>机器人辅助手术</h3><p>在经过选择的病例和有经验的团队中实施 RATS，包括肺叶切除及复杂肺门、纵隔淋巴结处理。</p></div>
+          <div class="card"><span class="tag">C</span><h3>比较方式</h3><p>在部分既有研究中与 VATS 或开胸比较；本综述自身没有建立统一对照组，也没有预设比较方案。</p></div>
+          <div class="card"><span class="tag">O</span><h3>关注结局</h3><p>中转开胸、围手术期并发症、死亡、淋巴结清扫、R0 切除、技术困难及肿瘤学结果；不同研究的定义和时间窗并不统一。</p></div>
+        </div>
+        <div class="callout warn"><strong>它回答的实际问题：</strong>“新辅助化免后，RATS 面临哪些解剖与操作挑战，现有临床系列支持到什么程度，应如何把安全边界落实到术前计划和术中决策？”这不是一项按 PICO 注册并执行的比较研究。</div>
+      </section>
+
+      <section id="methods">
+        <h2>方法：如何找文献、如何综合</h2>
+        <div class="grid3">
+          <div class="card"><h3>检索来源</h3><p>PubMed、Embase、Scopus，时间范围为 2018 年 1 月至 2026 年 7 月，并手工检查相关文献的参考文献。</p></div>
+          <div class="card"><h3>优先证据</h3><p>作者优先关注 II–III 期试验、Meta 分析、多中心研究及比较性外科系列；排除病例报告、无同行评审全文的会议摘要，以及未区分术式的研究。</p></div>
+          <div class="card"><h3>综合方式</h3><p>因研究设计、患者选择和结局报告异质性较大，作者采用叙述性综合，没有进行新的统计汇总。</p></div>
+        </div>
+        <h3>方法学上缺少什么</h3>
+        <ul>
+          <li>没有正式双人独立筛选，也没有报告分歧解决流程。</li>
+          <li>没有 PRISMA 流程图；检索、去重、筛选和最终纳入的记录数未被系统追踪。</li>
+          <li>没有逐项风险偏倚评估、证据确定性分级或预注册方案。</li>
+          <li>表 2 汇总 12 项选择性临床研究，但不能据此推定这是所有符合条件研究的完整集合。</li>
+          <li>没有新增患者、个体层面分析或新的汇总效应估计。</li>
+        </ul>
+        <details>
+          <summary>生成式 AI 使用声明</summary>
+          <div>
+            <p>作者声明使用生成式 AI 制作简明摘要、摘要、表格、图形，并进行浅层文字编辑；作者随后审阅和编辑输出，并对最终内容承担全部责任。</p>
+            <p class="small muted">解读：主动披露提高了透明度，但不能替代对检索完整性、数字转录、图表准确性和引用对应关系的人工核查。该声明本身既不是研究质量加分项，也不等同于学术不端。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="results">
+        <h2>结果：综述实际支持什么</h2>
+        <h3>1. 新辅助化免后的“手术难”，首先是组织层次改变</h3>
+        <p>作者反复强调肺门纤维化、组织平面消失、淋巴结与血管黏连或瘢痕化、肺动脉脆弱及纵隔瘢痕等问题。困难并不只表现为手术时间延长，而是解剖层次变得不可靠，血管损伤风险和中转需求可能随之上升。</p>
+        <h3>2. RATS 的可行性来自“团队 + 选择 + 预案”，不是平台自动带来的优势</h3>
+        <p>三维视野、腕式器械和精细操作可能帮助处理复杂肺门，但既有证据主要来自高经验中心和经过选择的患者。综述认可 RATS 的可行性，同时要求保留早期中转、近端血管控制、肿瘤学完整切除和团队协作的安全底线。</p>
+
+        <div class="table-wrap" role="region" aria-label="关键研究数字" tabindex="0">
+          <table>
+            <thead><tr><th>证据来源</th><th>人群 / 样本</th><th>综述转述的关键数字</th><th>正确解释</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Zeng 2023</strong><br><span class="tag gray">表 2 二级转述</span></td>
+                <td class="num">n=220<br>RATS vs VATS</td>
+                <td>中转开胸 <span class="num">7.5% vs 28.2%</span>；综述表格另述并发症无显著差异、死亡率均为 0%，RATS 淋巴结获取较多。</td>
+                <td>可描述为选定回顾性队列中的关联；不能直接归因于机器人平台，也不能外推到所有中心。</td>
+              </tr>
+              <tr>
+                <td><strong>Pohlman 2026</strong><br><span class="tag gray">表 2 / 正文二级转述</span></td>
+                <td class="num">n=3937<br>RATS vs VATS</td>
+                <td>中转开胸 <span class="num">7.9% vs 17.2%</span>；VATS 与更高中转几率相关，<span class="num">aOR 1.98</span>。</td>
+                <td>大样本提高精度但不消除残余混杂、术式选择和中心经验偏倚；调整后关联仍不等于因果效应。</td>
+              </tr>
+              <tr>
+                <td><strong>Barbosa 2026 Meta</strong><br><span class="tag gold">既有外部综合证据</span></td>
+                <td class="num">5 项观察性研究<br>n=984</td>
+                <td>RATS 与较低中转相关：<span class="num">OR 0.28</span>（95%CI <span class="num">0.13–0.65</span>）。</td>
+                <td>这是对观察性比较研究的既有综合，不是 Casiraghi 新增分析；可能受选择、学习曲线和中心效应影响。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout danger"><strong>数字使用规则：</strong>Zeng、Pohlman 以及表 2 其余研究的结果均由综述作者摘录，本页未把它们重新定义为原始研究复核结果。若用于指南、科研方案或患者决策，必须回看原文。</div>
+
+        <h3>3. 中转应被重新定义为风险控制动作</h3>
+        <p>当肺门解剖不清、血管控制不可靠、出血风险上升或肿瘤学完整性可能受损时，低阈值中转开胸是主动安全管理。延迟中转并不会因为“坚持微创”而自动带来更好的结局。</p>
+      </section>
+
+      <section id="statistics">
+        <h2>统计边界：哪些数字看起来强、实际仍有限</h2>
+        <div class="grid2">
+          <div class="card">
+            <h3>aOR 1.98 能说明什么</h3>
+            <p>在 Pohlman 所用数据库和模型中，VATS 与更高的中转几率相关。它是调整后的关联估计，解释依赖模型纳入的协变量、暴露和结局定义、缺失数据处理及中心聚集结构。</p>
+          </div>
+          <div class="card">
+            <h3>为什么不能说“RATS 降低中转 72%”</h3>
+            <p>Barbosa Meta 的 OR 0.28 不是风险比，也不是随机试验效应；观察性术式选择、术者经验、病例复杂度和中心政策都可能产生混杂。将其改写成因果“降低”会越界。</p>
+          </div>
+          <div class="card">
+            <h3>无汇总效应意味着什么</h3>
+            <p>Casiraghi 没有重新合并研究，因此不存在该综述自己的总体效应、异质性统计量、发表偏倚检验或确定性评估。表格并列不等于可比，更不等于合并分析。</p>
+          </div>
+          <div class="card">
+            <h3>中转率不是单纯“质量排名”</h3>
+            <p>中转受到患者选择、病变范围、手术类型、团队阈值和定义影响。较低中转可反映技术能力，也可能反映选择更严格；较高中转也可能代表更积极的安全决策。</p>
+          </div>
+        </div>
+        <details>
+          <summary>为什么不能从本综述推导生存获益</summary>
+          <div><p>综述重点是技术可行性和围手术期管理。即使某些系列报告 R0、淋巴结或短期结局，术式与长期生存之间仍隔着肿瘤分期、病理缓解、辅助治疗、随访长度和患者选择等多重因素。本综述没有能够隔离术式因果效应的设计。</p></div>
+        </details>
+      </section>
+
+      <section id="bias">
+        <h2>偏倚与可信度</h2>
+        <div class="grid2">
+          <div class="card"><h3>文献选择偏倚</h3><p>叙述性检索、无正式双人筛选、无流程图和记录数，使研究为何被纳入或遗漏难以完全复现。</p></div>
+          <div class="card"><h3>患者与中心选择</h3><p>RATS 队列往往来自成熟机器人中心；适合微创的病例也可能被优先分配至 RATS，导致术式效果与选择机制纠缠。</p></div>
+          <div class="card"><h3>异质性与报告偏倚</h3><p>新辅助方案、手术范围、中转定义、并发症分级和随访不同；技术成功的系列也更可能发表。</p></div>
+          <div class="card"><h3>重复人群与表格压缩</h3><p>国家数据库或多中心研究可能存在时间、机构或患者重叠；综述表格的短句无法承载原研究全部调整与限制。</p></div>
+        </div>
+        <div class="callout">
+          <strong>透明度信息：</strong>论文报告资金部分来自 Italian Ministry of Health 的 Ricerca Corrente 与 5 × 1000；作者声明无利益冲突。生成式 AI 使用及人工审阅责任已在论文中披露。
+        </div>
+        <p class="small muted">综合判断：适合用于构建临床问题、识别技术风险和查找原始研究；不适合单独承担术式优效性、因果效应或长期结局结论。</p>
+      </section>
+
+      <section id="applicability">
+        <h2>适用性：怎样落到真实手术场景</h2>
+        <div class="grid3">
+          <div class="card"><h3>更适用</h3><p>具备成熟 RATS 学习曲线、复杂肺门处理经验、规范淋巴结清扫能力及随时中转资源的高容量中心；病例经 MDT 与影像复评后选择。</p></div>
+          <div class="card"><h3>谨慎外推</h3><p>刚开展机器人项目的团队、缺少紧急开胸与血管控制配合的场景，以及肿瘤侵犯范围和治疗反应不明确的病例。</p></div>
+          <div class="card"><h3>术前—术中重点</h3><p>复核影像和治疗反应，预判肺门与纵隔瘢痕，规划近端血管控制，明确中转触发条件，并把 R0 和淋巴结处理置于微创完成率之前。</p></div>
+        </div>
+        <h3>建议用于团队讨论的四个问题</h3>
+        <ol>
+          <li>影像是否提示肺门、肺动脉或纵隔淋巴结的高风险粘连？</li>
+          <li>团队是否具备当前病例复杂度所需的机器人操作和紧急处理经验？</li>
+          <li>中转开胸的触发条件、切口方案、血管控制和人员分工是否在切皮前说清？</li>
+          <li>若微创路径与 R0 切除或安全淋巴结清扫冲突，是否能立即改变策略？</li>
+        </ol>
+        <div class="callout warn"><strong>患者层面：</strong>本页不能替代 MDT 或个体化评估。患者是否适合 RATS，需结合分期、治疗反应、心肺储备、手术范围、解剖复杂度和本中心经验共同决定。</div>
+      </section>
+
+      <section id="position">
+        <h2>证据位置：这篇综述与既有 Meta 如何放在一起</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>证据</th><th>贡献</th><th>主要限制</th><th>本页定位</th></tr></thead>
+            <tbody>
+              <tr><td>Casiraghi 2026 叙述性综述</td><td>整合技术难点、围手术期策略和选择性临床系列；提供面向实践的框架。</td><td>无正式系统筛选、无偏倚工具、无新增患者和汇总效应。</td><td><strong>等级 D</strong>：问题导航与专家综合。</td></tr>
+              <tr><td>Barbosa 2026 Meta</td><td>5 项、984 例观察性研究的定量综合；中转 OR 0.28（95%CI 0.13–0.65）。</td><td>非随机证据，受术式选择、中心经验、队列异质性和残余混杂影响。</td><td>较高于叙述性综述，但仍是<strong>观察性综合证据</strong>，不能确立因果优效。</td></tr>
+              <tr><td>Zeng / Pohlman 等比较队列</td><td>提供真实世界中转、并发症及手术结局的关联数据。</td><td>回顾性设计、病例选择和中心效应；本页数字经综述二级转述。</td><td>产生假设、估计可行性，需原文核对。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>合并后的稳妥结论：</strong>现有观察性证据与专家综合方向一致——在有经验的中心和合适病例中，RATS 可以实施，且部分研究观察到较低中转；但当前证据仍不足以证明 RATS 对所有患者普遍优先，或带来因果性的围手术期和生存获益。</p>
+      </section>
+
+      <section id="boundaries">
+        <h2>可说 / 不可说</h2>
+        <div class="boundary">
+          <div class="yes">
+            <h3>可以说</h3>
+            <ul>
+              <li>新辅助化免后纤维化和淋巴结瘢痕可能改变解剖层次，增加手术技术挑战。</li>
+              <li>叙述性综述认为，在经验中心选择病例实施 RATS 具有可行性。</li>
+              <li>部分回顾性比较研究观察到 RATS 中转率较低，但属于关联性证据。</li>
+              <li>低阈值、及时中转开胸是保护患者安全和肿瘤学完整性的策略。</li>
+              <li>需要更规范的前瞻性和比较性研究明确患者选择及长期结局。</li>
+            </ul>
+          </div>
+          <div class="no">
+            <h3>不可以说</h3>
+            <ul>
+              <li>RATS 已被证明应当在新辅助化免后普遍优先于 VATS 或开胸。</li>
+              <li>机器人平台本身因果性地降低了中转、并发症或死亡。</li>
+              <li>RATS 能改善无病生存或总生存。</li>
+              <li>表 2 的 12 项研究构成完整系统综述或足以直接 Meta 分析。</li>
+              <li>Zeng、Pohlman 或 Barbosa 的数字是 Casiraghi 团队的新患者结果。</li>
+              <li>“无显著差异”等同于两种术式等效。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="share">
+        <h2>可直接转发摘要</h2>
+        <div class="quote" id="shareText">【2026-07-23 真正新增｜全文解读】
+Casiraghi 等在 Cancers 发表叙述性综述（DOI: 10.3390/cancers18142365），讨论 NSCLC 新辅助化疗联合免疫治疗后的机器人肺切除。核心信息是：治疗相关肺门纤维化、淋巴结瘢痕和组织平面消失会增加手术难度；在有经验的中心、经过选择的病例中，RATS 可行，但低阈值中转开胸应被视为安全策略，而非失败。
+
+综述检索 PubMed、Embase、Scopus（2018-01 至 2026-07），没有正式双人筛选、PRISMA 流程图或记录数，也没有新增患者和新的汇总效应。表 2 选择性列出 12 项研究（n=20–3937）。其中 Zeng（n=220）转述中转率为 RATS 7.5% vs VATS 28.2%；Pohlman（n=3937）为 7.9% vs 17.2%，VATS 中转 aOR 1.98。上述均是综述对观察性研究的二级转述。既有 Barbosa Meta（5 项、984 例）报告 OR 0.28（95%CI 0.13–0.65），仍只能视作观察性综合证据。
+
+因此，可以说“RATS 在经验中心选择病例可行，及时中转是安全策略”；不能说“RATS 普遍优先”、能因果降低风险或改善生存。证据等级 C*（非系统叙述性综述）。仅供学术交流，不替代 MDT 和个体化诊疗决策。</div>
+        <div class="actions" style="margin-top:14px">
+          <button class="btn primary" style="border-color:var(--teal);background:var(--teal);color:#fff" type="button" data-copy="#shareText">复制这段摘要</button>
+        </div>
+      </section>
+
+      <section id="sources">
+        <h2>来源、授权与全文核对</h2>
+        <div class="sourcebox">
+          <p><strong>主文献：</strong>Casiraghi M, Mazzella A, Girelli L, et al. Robotic Thoracic Surgery After Neoadjuvant Chemo-Immunotherapy for NSCLC: A Narrative Review. <em>Cancers</em>. 2026;18:2365.</p>
+          <p><strong>DOI：</strong><a href="https://doi.org/10.3390/cancers18142365">10.3390/cancers18142365</a></p>
+          <p><strong>本地全文：</strong><span class="public-pdf-note">原文 PDF（公开版不镜像，请通过 DOI、PubMed 或期刊链接访问）</span></p>
+          <p><strong>PDF 核验：</strong>MDPI 官方 VOR v2，15 页，未加密；SHA-256：<code>4cb5bbb8d26327c512b4b10aa4a15c7800596ebbac5999533596696288c4c220</code></p>
+          <p><strong>标识符状态：</strong>截至 2026-07-23，暂无 PMID / PMCID；不得将“尚未分配”误写为“不会收录”。</p>
+          <p><strong>授权：</strong>CC BY 4.0。使用时仍须署名并保留来源与改动说明。</p>
+          <p><strong>核对状态：</strong>官方全文与 PDF 已于 2026-07-23 核对；本页按全文解读制作。</p>
+        </div>
+        <details>
+          <summary>外部证据锚点：Barbosa Meta</summary>
+          <div><p>Barbosa P, et al. Robotic-assisted versus video-assisted thoracoscopic surgery after neoadjuvant treatment in patients with resectable non-small cell lung cancer: a systematic review and meta-analysis. <a href="https://doi.org/10.1007/s11701-026-03364-y">DOI: 10.1007/s11701-026-03364-y</a>。本页只用其 5 项、984 例及中转 OR 0.28（95%CI 0.13–0.65）作为既有观察性综合证据锚点，不把它归为 Casiraghi 的新增分析。</p></div>
+        </details>
+        <div class="callout danger"><strong>医学免责声明：</strong>本页仅供医学教育、文献研读和科研讨论，不构成诊断、治疗、手术方式选择或转诊建议，不能替代具备完整病历与影像资料的胸外科、肿瘤科及多学科团队评估。</div>
+        <p class="small muted print-only">打印来源：机器人肺手术论文助手 · Casiraghi 2026 深度解读 · 生成日期 2026-07-23</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="shell">
+    <p>机器人肺手术论文助手 · 全文证据边界解读 · 官方全文/PDF 核对：2026-07-23</p>
+    <p>潍坊市人民医院胸外科 · 王江整理</p>
+  </footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (() => {
+      const toast = document.querySelector("#toast");
+      let timer;
+      const say = (message) => {
+        toast.textContent = message;
+        toast.classList.add("show");
+        clearTimeout(timer);
+        timer = setTimeout(() => toast.classList.remove("show"), 2400);
+      };
+      const fallbackCopy = (text) => {
+        const area = document.createElement("textarea");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.opacity = "0";
+        document.body.appendChild(area);
+        area.select();
+        let ok = false;
+        try { ok = document.execCommand("copy"); } catch (_) { ok = false; }
+        area.remove();
+        return ok;
+      };
+      document.querySelectorAll("[data-copy]").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const target = document.querySelector(button.dataset.copy);
+          if (!target) { say("未找到可复制内容"); return; }
+          const text = target.innerText.trim();
+          let ok = false;
+          if (navigator.clipboard && window.isSecureContext) {
+            try { await navigator.clipboard.writeText(text); ok = true; } catch (_) { ok = false; }
+          }
+          if (!ok) ok = fallbackCopy(text);
+          say(ok ? "转发摘要已复制" : "复制失败，请手动选择文本");
+        });
+      });
+      const toggle = document.querySelector("[data-toggle]");
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          const items = [...document.querySelectorAll("details")];
+          const openAll = items.some((item) => !item.open);
+          items.forEach((item) => { item.open = openAll; });
+          toggle.textContent = openAll ? "收起全部细节" : "展开全部细节";
+        });
+      }
+      const printButton = document.querySelector("[data-print]");
+      if (printButton) printButton.addEventListener("click", () => window.print());
+    })();
+  </script>
+</body>
+</html>
